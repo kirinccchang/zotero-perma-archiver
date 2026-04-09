@@ -5,7 +5,7 @@
         {
           "version": "1.2.2",
           "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.2/perma-archiver_v1.2.2.xpi",
-          "update_hash": "sha256:6e31bcffb9338707b658c271d6fd0cdaa237f5758563ac7cdfb458f2c90195d3",
+          "update_hash": "sha256:b1e56ec21ab60eedabf621f3a1f50e6c97cfc17d0c7edb7ecc9e5311a6ea8242",
           "applications": {
             "zotero": {
               "strict_min_version": "7.0"
