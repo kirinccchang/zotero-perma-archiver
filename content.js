@@ -13,16 +13,12 @@ if (!window._permaArchiver) {
 
     _notifierID: null,
 
-    PREF_APIKEY    : "extensions.perma-archiver.apiKey",
-    PREF_ON        : "extensions.perma-archiver.enabled",
-    PREF_FOLDER    : "extensions.perma-archiver.folderID",
-    PREF_FOLDER_NAME: "extensions.perma-archiver.folderName",
-    PREF_QUOTA_MAP : "extensions.perma-archiver.quotaMap",
-    PERMA_API      : "https://api.perma.cc/v1/archives/",
-    PERMA_FOLDERS  : "https://api.perma.cc/v1/folders/",
-    MENU_ID        : "perma-archiver-menu",
-
-    _quotaWarned: new Set(),
+    PREF_APIKEY  : "extensions.perma-archiver.apiKey",
+    PREF_ON      : "extensions.perma-archiver.enabled",
+    PREF_FOLDER  : "extensions.perma-archiver.folderID",
+    PERMA_API    : "https://api.perma.cc/v1/archives/",
+    PERMA_FOLDERS: "https://api.perma.cc/v1/folders/",
+    MENU_ID      : "perma-archiver-menu",
 
     ARCHIVE_TYPES: new Set([
       "webpage", "blogPost", "newspaperArticle",
@@ -83,9 +79,10 @@ if (!window._permaArchiver) {
       const permaUrl = await this._callPerma(url, apiKey);
       if (!permaUrl) return;
 
-      // blogPost and forumPost don't have a "place" field — append perma link to url field
-      const NO_PLACE = new Set(["blogPost", "forumPost"]);
-      if (!NO_PLACE.has(item.itemType)) {
+      // Dynamically check if "place" field is valid for this item type
+      const placeFieldID = Zotero.ItemFields.getID("place");
+      const hasPlace = Zotero.ItemFields.isValidForType(placeFieldID, item.itemTypeID);
+      if (hasPlace) {
         item.setField("place", permaUrl);
       } else {
         const currentUrl = item.getField("url") || "";
@@ -128,15 +125,6 @@ if (!window._permaArchiver) {
       }
       if (resp.status === 201) {
         const data = await resp.json();
-        Zotero.log("Perma Archiver: API response keys: " + Object.keys(data).join(", "));
-        Zotero.log("Perma Archiver: links_remaining = " + JSON.stringify(data.links_remaining));
-        const remaining = data.links_remaining;
-        if (typeof remaining === "number") {
-          const folderKey  = this._getFolderID() ? String(this._getFolderID()) : "personal";
-          const folderName = this._getFolderName();
-          this._updateQuota(folderKey, folderName, remaining);
-          if (remaining <= 2) this._warnLowQuota(folderKey, folderName, remaining);
-        }
         return "https://perma.cc/" + data.guid;
       }
       if (resp.status === 401) {
@@ -199,7 +187,6 @@ if (!window._permaArchiver) {
         const chosenID   = ids[selected.value];
         const chosenName = names[selected.value];
         this._setFolderID(chosenID);
-        this._setFolderName(chosenName);
         Services.prompt.alert(window, "Perma Archiver",
           "✓ Archives will be saved to: " + chosenName);
       }
@@ -232,65 +219,6 @@ if (!window._permaArchiver) {
     _setFolderID(id) {
       try { Services.prefs.setIntPref(this.PREF_FOLDER, id); }
       catch(e) {}
-    },
-    _getFolderName() {
-      try { return Services.prefs.getStringPref(this.PREF_FOLDER_NAME, "Personal Links"); }
-      catch(e) { return "Personal Links"; }
-    },
-    _setFolderName(v) {
-      try { Services.prefs.setStringPref(this.PREF_FOLDER_NAME, v || "Personal Links"); }
-      catch(e) {}
-    },
-
-    // ── Quota tracking ───────────────────────────────────
-
-    _getQuotaMap() {
-      try {
-        const raw = Services.prefs.getStringPref(this.PREF_QUOTA_MAP, "{}");
-        return JSON.parse(raw);
-      } catch(e) { return {}; }
-    },
-    _updateQuota(folderKey, folderName, remaining) {
-      try {
-        const map = this._getQuotaMap();
-        map[folderKey] = {
-          name: folderName,
-          remaining,
-          updated: new Date().toISOString().slice(0, 10),
-        };
-        Services.prefs.setStringPref(this.PREF_QUOTA_MAP, JSON.stringify(map));
-      } catch(e) {}
-    },
-    _warnLowQuota(folderKey, folderName, remaining) {
-      if (this._quotaWarned.has(folderKey)) return;
-      this._quotaWarned.add(folderKey);
-      try {
-        const win = Zotero.getMainWindow();
-        if (!win) return;
-        Services.prompt.alert(win,
-          "Perma Archiver — Low Quota",
-          "Warning: only " + remaining + " archive" + (remaining === 1 ? "" : "s") +
-          " remaining in \"" + folderName + "\".\n\n" +
-          "Consider switching to your institution's folder:\n" +
-          "Tools \u2192 Perma Archiver \u2192 Choose Save Folder\u2026"
-        );
-      } catch(e) {}
-    },
-    showQuota(window) {
-      const map  = this._getQuotaMap();
-      const keys = Object.keys(map);
-      if (keys.length === 0) {
-        Services.prompt.alert(window, "Perma Archiver — Quota",
-          "No quota data yet.\n\n" +
-          "Remaining quota is recorded automatically after your first archive.");
-        return;
-      }
-      const lines = keys.map(k => {
-        const e = map[k];
-        return e.name + ":  " + e.remaining + " remaining  (updated " + e.updated + ")";
-      });
-      Services.prompt.alert(window, "Perma Archiver — Quota",
-        lines.join("\n\n"));
     },
   };
 }
