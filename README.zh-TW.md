@@ -12,7 +12,7 @@
 
 **在 Zotero 中儲存網頁時，自動封存到 [perma.cc](https://perma.cc)，符合 Bluebook 22nd ed. Rule 18.2.1(d) 的引用規範。**
 
-作者：[張正麒（Kirin Chang）](https://kirinchang.com/)，研究員，亞美法研究所（USALI），紐約大學法學院。
+作者：[張正麒（Cheng-chi "Kirin" Chang）](https://kirinchang.com/)，美國紐約大學法學院「亞美法研究所」專任研究員，同時兼任美國埃默里大學法學院「人工智慧與未來工作計畫」附屬研究員，曾任該計畫副主任暨學術研究員。專長領域包括科技與法律、隱私權、智慧財產權、資安、國際法、人工智慧與法律、契約法、公司法、企業社會責任與各類新興科技議題。
 
 ---
 
