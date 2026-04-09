@@ -34,7 +34,7 @@ GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "YOUR_GITHUB_TOKEN")
 GITHUB_USER  = "kirinccchang"
 GITHUB_REPO  = "zotero-perma-archiver"
 PLUGIN_ID    = "perma-archiver@kirinchang.law"
-VERSION      = "1.2.2"
+VERSION      = "1.2.4"
 
 # 本機檔案路徑（相對於這個腳本的位置）
 XPI_FILE     = f"perma-archiver_v{VERSION}.xpi"
@@ -211,12 +211,25 @@ def main():
         if not p.exists():
             err(f"找不到檔案：{p}")
 
-    # Check README download URLs are consistent with VERSION
-    expected_url_fragment = f"/releases/download/v{VERSION}/perma-archiver_v{VERSION}.xpi"
+    # Auto-fix README download links to match VERSION (link text + path + filename)
+    import re
     for readme in [readme_path, readme_zh_path]:
         text = readme.read_text()
-        if f"perma-archiver_v{VERSION}.xpi" in text and expected_url_fragment not in text:
-            err(f"{readme.name} 下載連結版本不一致——請確認路徑和檔名都是 v{VERSION}")
+        # Fix link text: [perma-archiver_vX.X.X.xpi]
+        fixed = re.sub(
+            r'perma-archiver_v[\d.]+\.xpi',
+            f'perma-archiver_v{VERSION}.xpi',
+            text
+        )
+        # Fix URL path: /releases/download/vX.X.X/
+        fixed = re.sub(
+            r'/releases/download/v[\d.]+/',
+            f'/releases/download/v{VERSION}/',
+            fixed
+        )
+        if fixed != text:
+            readme.write_text(fixed)
+            log(f"Auto-fixed download link in {readme.name}")
 
     print(f"\n{'='*50}")
     print(f"  Publishing Perma Archiver v{VERSION}")
