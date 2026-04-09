@@ -216,7 +216,9 @@ Other platforms and Zotero versions may work but have not been verified.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+Mozilla Public License 2.0. See [LICENSE](LICENSE).
+
+> Modifications to the plugin source files must remain open source under MPL 2.0. The included CSL style (`bluebook-law-review-perma.csl`) is separately licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) as required by the CSL project.
 
 ## Acknowledgments
 
