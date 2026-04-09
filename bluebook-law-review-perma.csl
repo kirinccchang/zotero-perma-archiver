@@ -39,8 +39,8 @@
     <title-short>Bluebook LR perma.cc</title-short>
     <id>http://www.zotero.org/styles/bluebook-law-review-perma</id>
     <link href="http://www.zotero.org/styles/bluebook-law-review-perma" rel="self"/>
-    <link href="http://www.zotero.org/styles/bluebook-law-review" rel="template"/>
     <link href="https://www.legalbluebook.com/" rel="documentation"/>
+    <link href="http://www.zotero.org/styles/bluebook-law-review" rel="template"/>
     <author>
       <name>Kirin Chang</name>
       <email>cc6614@nyu.edu</email>
@@ -166,7 +166,7 @@
            Per Bluebook Rule 18.2.1(d) example format:
            https://original-url (last visited DATE) [https://perma.cc/XXXX-XXXX]
            Perma.cc URL: auto-set by XPI to Zotero "Place" field; or paste manually. -->
-      <else-if type="webpage post-weblog article-newspaper article-magazine post preprint article-journal" match="any">
+      <else-if type="webpage post-weblog article-newspaper article-magazine post article-journal" match="any">
         <group delimiter=" ">
           <text variable="URL"/>
           <choose>
