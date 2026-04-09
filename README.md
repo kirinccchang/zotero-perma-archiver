@@ -127,9 +127,16 @@ By default, all archives are saved to your perma.cc **Personal Links** folder. I
 
 ---
 
-### Step 3 — Install the Bluebook citation style
+### Step 3 — Install the Bluebook citation style (optional — for Word users)
 
-This step makes your Zotero citations automatically include the `[https://perma.cc/...]` bracket required by Bluebook Rule 18.2.1(d). You are downloading a small style file that tells Zotero how to format your footnotes — no technical knowledge needed.
+> [!NOTE]
+> **Steps 1 and 2 are all you need.** Once the plugin is installed and your API key is entered, the perma.cc link is saved directly into your Zotero item — you can see it there, copy it manually, or use it however you like.
+>
+> Step 3 is only needed if you use **Zotero's Word plugin** to insert citations into Microsoft Word or Google Docs. If you do, this small style file makes the `[https://perma.cc/...]` bracket appear in your footnotes automatically.
+>
+> Zotero's Word plugin is included with Zotero and installs automatically into Word. If you have not set it up yet, see [Zotero's word processor plugin documentation](https://www.zotero.org/support/word_processor_plugin_usage).
+
+This step downloads a small style file that tells Zotero how to format your Bluebook footnotes — no technical knowledge needed.
 
 1. Click here to download: **[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
    - If your browser opens it as text instead of downloading, right-click the link and choose **Save Link As…**
@@ -142,10 +149,10 @@ This step makes your Zotero citations automatically include the `[https://perma.
 
 5. Select the `.csl` file you just downloaded and click **Open**.
 
-6. When creating a bibliography or inserting citations in Word, choose **Bluebook Law Review (perma.cc)** as your citation style.
+6. When inserting citations in Word or Google Docs, choose **Bluebook Law Review (perma.cc)** as your citation style.
 
 > [!TIP]
-> Once installed, the style works automatically. Just use Zotero's "Add/Edit Citation" in Word as you normally would — the perma.cc link will appear on its own.
+> Once installed, the style works automatically. Just use Zotero's "Add/Edit Citation" as you normally would — the perma.cc link will appear on its own.
 
 ---
 
@@ -157,8 +164,9 @@ Once the plugin is installed and your API key is entered, **every new save is ha
 
 1. You click the Zotero browser extension icon to save any item with a URL
 2. The plugin calls perma.cc in the background (takes a few seconds)
-3. The archived URL is saved to your Zotero item
-4. When you insert a citation in Word, it looks like this:
+3. The perma.cc link is saved directly into your Zotero item — visible in the item's details panel
+
+If you use Zotero's Word plugin (Step 3), citations will automatically include the perma.cc bracket:
 
 ```
 Rebecca J. Rose, The Law as Justice Gorsuch Sees It, Atlantic (Aug. 5, 2024),
