@@ -6,7 +6,7 @@
 
 ![Zotero](https://img.shields.io/badge/Zotero-7%20%7C%208-CC2936?style=for-the-badge&logo=zotero&logoColor=white)
 ![GitHub release](https://img.shields.io/github/v/release/kirinccchang/zotero-perma-archiver?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)
 
 </div>
 
@@ -75,7 +75,7 @@ You will need:
 
 ### Step 1 — Download and install the plugin file
 
-1. Click here to download: **[perma-archiver_v1.2.1.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.1.xpi)**
+1. Click here to download: **[perma-archiver_v1.2.2.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.2.xpi)**
    - Your browser may warn you about downloading a `.xpi` file — this is normal. Allow the download.
    - Save it somewhere easy to find (e.g., your Desktop).
 
@@ -216,9 +216,9 @@ Other platforms and Zotero versions may work but have not been verified.
 
 ## License
 
-Mozilla Public License 2.0. See [LICENSE](LICENSE).
+GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
 
-> Modifications to the plugin source files must remain open source under MPL 2.0. The included CSL style (`bluebook-law-review-perma.csl`) is separately licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) as required by the CSL project.
+> Modifications to the plugin source files must remain open source under AGPL-3.0. The included CSL style (`bluebook-law-review-perma.csl`) is separately licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) as required by the CSL project.
 
 ## Acknowledgments
 
