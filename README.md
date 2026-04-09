@@ -1,8 +1,10 @@
 # Perma Archiver for Zotero
 
+[繁體中文版 →](README.zh-TW.md)
+
 **Automatically archives webpages, blog posts, and news articles to [perma.cc](https://perma.cc) when saved in Zotero — keeping your citations compliant with Bluebook 22nd ed. Rule 18.2.1(d).**
 
-Developed by [Kirin Chang](https://github.com/kirinccchang), Research Fellow, U.S.-Asia Law Institute, NYU School of Law.
+Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, U.S.-Asia Law Institute, NYU School of Law.
 
 ---
 
@@ -66,6 +68,12 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 - **perma.cc account** — free at [https://perma.cc/register](https://perma.cc/register)
   - Free accounts: 10 archives/month
   - Law school/institution accounts: higher or unlimited (check with your law library)
+
+## Tested on
+
+- macOS Sequoia 15.7.1 · Zotero 8.0.5
+
+Other platforms and Zotero versions may work but have not been verified.
 
 ---
 
