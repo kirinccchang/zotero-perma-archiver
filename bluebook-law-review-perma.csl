@@ -39,8 +39,8 @@
     <title-short>Bluebook LR perma.cc</title-short>
     <id>http://www.zotero.org/styles/bluebook-law-review-perma</id>
     <link href="http://www.zotero.org/styles/bluebook-law-review-perma" rel="self"/>
-    <link href="https://www.legalbluebook.com/" rel="documentation"/>
     <link href="http://www.zotero.org/styles/bluebook-law-review" rel="template"/>
+    <link href="https://www.legalbluebook.com/" rel="documentation"/>
     <author>
       <name>Kirin Chang</name>
       <email>cc6614@nyu.edu</email>
