@@ -116,8 +116,11 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 ## Why this matters — Bluebook Rule 18.2.1(d)
 
+> [!NOTE]
+> **New to Zotero or perma.cc?** Expand the section below for a plain-English explanation of what these tools are, why citations rot, and what the 22nd edition requires.
+
 <details>
-<summary>Click to expand: background on link rot and the 22nd edition requirement</summary>
+<summary>▶ What is Zotero? What is perma.cc? Why does this exist? (click to expand)</summary>
 
 ### The problem: link rot
 
