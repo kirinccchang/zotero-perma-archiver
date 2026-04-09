@@ -75,7 +75,7 @@ You will need:
 
 ### Step 1 — Download and install the plugin file
 
-1. Click here to download: **[perma-archiver_v1.2.3.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.4/perma-archiver_v1.2.4.xpi)**
+1. Click here to download: **[perma-archiver_v1.2.4.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.4/perma-archiver_v1.2.4.xpi)**
    - Your browser may warn you about downloading a `.xpi` file — this is normal. Allow the download.
    - Save it somewhere easy to find (e.g., your Desktop).
 
