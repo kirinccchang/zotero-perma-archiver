@@ -125,7 +125,7 @@ By default, all archives are saved to your perma.cc **Personal Links** folder. I
 
 This step makes your Zotero citations automatically include the `[https://perma.cc/...]` bracket required by Bluebook Rule 18.2.1(d).
 
-1. Click here to download: **[bluebook-law-review-KC.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-KC.csl)**
+1. Click here to download: **[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
    - If your browser opens it as text instead of downloading, right-click the link and choose **Save Link As…**
 
 2. In Zotero, open **Settings** (on Mac: **Zotero → Settings**; on Windows: **Edit → Preferences**).
@@ -136,7 +136,7 @@ This step makes your Zotero citations automatically include the `[https://perma.
 
 5. Select the `.csl` file you just downloaded and click **Open**.
 
-6. When creating a bibliography or inserting citations in Word, choose **Bluebook Law Review (Kirin Chang)** as your citation style.
+6. When creating a bibliography or inserting citations in Word, choose **Bluebook Law Review (perma.cc)** as your citation style.
 
 > [!TIP]
 > Once installed, the style works automatically. Just use Zotero's "Add/Edit Citation" in Word as you normally would — the perma.cc link will appear on its own.
@@ -190,7 +190,7 @@ Try clearing the Zotero extension cache:
 <details>
 <summary>Archives not appearing in citations</summary>
 
-Make sure you selected **Bluebook Law Review (Kirin Chang)** as your citation style — not the default "Bluebook Law Review" style that came with Zotero. Only the KC version includes the perma.cc bracket.
+Make sure you selected **Bluebook Law Review (perma.cc)** as your citation style — not the default "Bluebook Law Review" style that came with Zotero. Only the KC version includes the perma.cc bracket.
 
 </details>
 
