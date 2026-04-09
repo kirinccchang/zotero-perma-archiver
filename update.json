@@ -3,9 +3,9 @@
     "perma-archiver@kirinchang.law": {
       "updates": [
         {
-          "version": "1.2.2",
-          "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.2/perma-archiver_v1.2.2.xpi",
-          "update_hash": "sha256:b1e56ec21ab60eedabf621f3a1f50e6c97cfc17d0c7edb7ecc9e5311a6ea8242",
+          "version": "1.2.3",
+          "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.3/perma-archiver_v1.2.3.xpi",
+          "update_hash": "sha256:fe6e6468a5d30d663726ba64e59d8bed99f89ac85c184d4df38aed0a3c3d80dc",
           "applications": {
             "zotero": {
               "strict_min_version": "7.0"
