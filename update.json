@@ -4,7 +4,7 @@
       "updates": [
         {
           "version": "1.2.0",
-          "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/untagged-9a92c77fb07ef31aee07/perma-archiver_v1.2.0.xpi",
+          "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.0/perma-archiver_v1.2.0.xpi",
           "update_hash": "sha256:1c46840f70b664a946b0aa78bbed0921eb59b362bc2973bc9d17dc8bfcb4619d",
           "applications": {
             "zotero": {
