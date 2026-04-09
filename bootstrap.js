@@ -94,13 +94,6 @@ function _injectMenu(window) {
       }
     });
 
-    // Check Quota
-    const itemQuota = doc.createXULElement("menuitem");
-    itemQuota.setAttribute("label", "Check Quota…");
-    itemQuota.addEventListener("command", () => {
-      if (window._permaArchiver) window._permaArchiver.showQuota(window);
-    });
-
     // Enable / Disable
     const itemToggle = doc.createXULElement("menuitem");
     itemToggle.id    = MENU_ID + "-toggle";
@@ -122,7 +115,6 @@ function _injectMenu(window) {
 
     popup.appendChild(itemKey);
     popup.appendChild(itemFolder);
-    popup.appendChild(itemQuota);
     popup.appendChild(doc.createXULElement("menuseparator"));
     popup.appendChild(itemToggle);
     popup.appendChild(doc.createXULElement("menuseparator"));
