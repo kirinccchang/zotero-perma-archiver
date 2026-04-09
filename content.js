@@ -20,11 +20,6 @@ if (!window._permaArchiver) {
     PERMA_FOLDERS: "https://api.perma.cc/v1/folders/",
     MENU_ID      : "perma-archiver-menu",
 
-    ARCHIVE_TYPES: new Set([
-      "webpage", "blogPost", "newspaperArticle",
-      "magazineArticle", "forumPost", "preprint",
-    ]),
-
     // ── Init ────────────────────────────────────────────
 
     initNotifier(id, version) {
@@ -69,7 +64,7 @@ if (!window._permaArchiver) {
 
     async _processItem(itemID, apiKey) {
       const item = await Zotero.Items.getAsync(itemID);
-      if (!item || !this.ARCHIVE_TYPES.has(item.itemType)) return;
+      if (!item || item.isAttachment() || item.isNote()) return;
 
       const url = item.getField("url") || "";
       if (!url) return;
@@ -123,13 +118,13 @@ if (!window._permaArchiver) {
       const pane = window.ZoteroPane;
       const selected = pane.getSelectedItems();
       const toArchive = selected.filter(item =>
-        this.ARCHIVE_TYPES.has(item.itemType) && !this._alreadyArchived(item)
+        !item.isAttachment() && !item.isNote() &&
+        (item.getField("url") || "") && !this._alreadyArchived(item)
       );
 
       if (toArchive.length === 0) {
         Services.prompt.alert(window, "Perma Archiver",
-          "No unarchived items selected.\n\n" +
-          "Supported types: Webpage \u00b7 Blog Post \u00b7 Newspaper \u00b7 Magazine \u00b7 Forum Post \u00b7 Preprint");
+          "No unarchived items with a URL selected.");
         return;
       }
 
