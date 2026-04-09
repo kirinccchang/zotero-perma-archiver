@@ -10,14 +10,18 @@
 
 </div>
 
-**在 Zotero 中儲存網頁時，自動封存到 [perma.cc](https://perma.cc)，並將 `[perma.cc/...]` 連結自動加入 Word 引用中。完全符合 Bluebook 22nd ed. Rule 18.2.1(d) 規範，無需額外操作。**
+**在 Zotero 中儲存任何有網址的條目時，自動封存到 [perma.cc](https://perma.cc)；也能一鍵批次補齊過去已儲存的文獻庫。`[perma.cc/...]` 連結自動加入 Word 引用中。完全符合 Bluebook 22nd ed. Rule 18.2.1(d) 規範，無需額外操作。**
 
 作者：[張正麒（Cheng-chi "Kirin" Chang）](https://kirinchang.com/)，美國紐約大學法學院「[亞美法研究所](https://usali.org/people#kirin-chang)」專任研究員，同時兼任美國埃默里大學法學院「人工智慧與未來工作計畫」附屬研究員，曾任該計畫副主任暨學術研究員。專長領域包括科技與法律、隱私權、智慧財產權、資安、國際法、人工智慧與法律、契約法、公司法、企業社會責任與各類新興科技議題。
 
 ---
 
 > [!TIP]
-> **一句話說清楚：** 你在 Zotero 存一個網頁 → 外掛自動在 perma.cc 建立永久封存副本 → 之後用 Zotero 產生引用時，`[perma.cc/...]` 連結會自動出現，完全符合 Bluebook 22nd ed. 規定。不需要任何額外操作。
+> **兩種情境，都是自動的：**
+>
+> **新條目：** 你在 Zotero 存任何有網址的條目 → 外掛在背景自動封存到 perma.cc → 之後在 Word 插入引用時，`[perma.cc/...]` 括號自動出現。不需要任何額外操作。
+>
+> **既有文獻庫：** 安裝前就已存在 Zotero 的條目怎麼辦？選取它們，按右鍵，選 **Archive to Perma.cc**，完成。外掛會逐一處理，失敗的條目自動加上 **`perma-failed`** 標籤，方便你逐一補齊。
 
 ---
 
@@ -153,9 +157,11 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 
 ## 設定完成後的運作方式
 
-安裝外掛並輸入 API 金鑰後，**一切都是自動的**：
+### 自動封存——新條目
 
-1. 你點一下 Zotero 瀏覽器擴充功能圖示，儲存一個網頁
+安裝外掛並輸入 API 金鑰後，**每次新儲存都全自動處理**：
+
+1. 你點一下 Zotero 瀏覽器擴充功能圖示，儲存任何有網址的條目
 2. 外掛在背景呼叫 perma.cc（需要幾秒鐘）
 3. 封存網址自動寫入你的 Zotero 條目
 4. 在 Word 中插入引用時，輸出如下：
@@ -166,7 +172,18 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 (last visited Apr. 9, 2026) [https://perma.cc/PT32-56LR].
 ```
 
-**支援的條目類型：** 網頁（Webpage）· 部落格文章（Blog Post）· 報紙文章（Newspaper Article）· 雜誌文章（Magazine Article）· 論壇文章（Forum Post）· 預印本（Preprint）
+### 批次歸檔——補齊既有文獻庫
+
+安裝前就已存在 Zotero 的條目也能一次補齊：
+
+1. 在文獻庫中選取條目（**⌘A** 或 **Ctrl+A** 全選，或按住 **⌘/Ctrl** 逐一點選）
+2. 在選取範圍上按右鍵
+3. 選擇 **Archive to Perma.cc**
+4. 確認後，外掛逐一處理並顯示完成摘要
+
+封存失敗的條目（例如付費牆頁面）會自動加上 **`perma-failed`** 標籤，方便你集中處理。成功重試後，標籤自動移除。
+
+**支援所有有網址的 Zotero 條目**——網頁、部落格文章、報紙文章、報告、政府文件等，均適用。
 
 ---
 
@@ -207,7 +224,7 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 請確認：
 1. 已完成步驟二（輸入 API 金鑰）
-2. 儲存的條目類型有受支援（網頁、部落格文章、報紙文章、雜誌文章、論壇文章、預印本）
+2. 條目有網址欄位（外掛會封存任何有網址的條目）
 3. 封存功能已開啟：**Tools → Perma Archiver → Enable** 應為勾選狀態
 
 </details>
