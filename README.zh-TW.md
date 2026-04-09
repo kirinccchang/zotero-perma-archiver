@@ -117,7 +117,15 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 > 完成此步驟前，外掛不會封存任何內容。API 金鑰是外掛連接你的 perma.cc 帳號的憑證，不可略過。
 
 **選用——選擇儲存資料夾：**
-若想將封存存入 perma.cc 特定資料夾（而非預設的 Personal Links），請前往 **Tools → Perma Archiver → Choose Save Folder…**
+
+預設情況下，所有封存會存入 perma.cc 的 **Personal Links** 資料夾。若想將封存分類到特定資料夾（例如按期刊或專案分類）：
+
+1. 在 Zotero 中，前往 **Tools → Perma Archiver → Choose Save Folder…**
+2. 畫面會列出你的 perma.cc 資料夾清單，選擇你想使用的資料夾。
+3. 點 **OK**——之後所有封存都會存入該資料夾。
+
+> [!TIP]
+> 法學院帳號通常由圖書館預先建立了共用組織資料夾。如果你是期刊編輯或研究助理，可以詢問法學院圖書館員是否有機構專用的 perma.cc 資料夾。
 
 ---
 
