@@ -83,7 +83,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 
 ### 步驟一：下載並安裝外掛檔案
 
-1. 點此下載：**[perma-archiver_v1.2.0.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.0/perma-archiver_v1.2.0.xpi)**
+1. 點此下載：**[perma-archiver_v1.2.1.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.1.xpi)**
    - 瀏覽器可能會警告你正在下載 `.xpi` 檔案——這是正常的，允許下載即可。
    - 存到容易找到的地方（例如桌面）。
 
