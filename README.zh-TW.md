@@ -224,7 +224,9 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 ## 授權
 
-MIT License。詳見 [LICENSE](LICENSE)。
+Mozilla Public License 2.0。詳見 [LICENSE](LICENSE)。
+
+> 對外掛原始碼的修改必須依 MPL 2.0 保持開放原始碼。附帶的 CSL 樣式（`bluebook-law-review-perma.csl`）依 CSL 專案規定，另以 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 授權。
 
 ## 致謝
 
