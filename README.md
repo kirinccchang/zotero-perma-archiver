@@ -12,7 +12,7 @@
 
 **Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it. Already have a library full of unarchived items? Select them, right-click, and archive them all at once. The `[perma.cc/...]` link appears in your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance — no technical knowledge required.**
 
-Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law; Affiliated Researcher, AI and Future of Work Initiative, Emory University School of Law (former Associate Director and Academic Researcher).
+Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law; Affiliated Researcher, AI and Future of Work Program, Emory University School of Law (former Associate Director and Academic Researcher).
 
 ---
 
