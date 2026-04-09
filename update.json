@@ -1,0 +1,18 @@
+{
+  "addons": {
+    "perma-archiver@kirinchang.law": {
+      "updates": [
+        {
+          "version": "1.2.0",
+          "update_link": "https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.0/perma-archiver_v1.2.0.xpi",
+          "update_hash": "sha256:a73f61100dd7fd3279b013c097a53b2bf0ef398f62e03dc3c832ef705bd85a70",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "7.0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
