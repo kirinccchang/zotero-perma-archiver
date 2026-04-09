@@ -60,24 +60,32 @@ if (!window._permaArchiver) {
       }
     },
 
+    _alreadyArchived(item) {
+      if ((item.getField("place") || "").toLowerCase().includes("perma.cc")) return true;
+      if ((item.getField("extra") || "").toLowerCase().includes("perma.cc")) return true;
+      if ((item.getField("url")   || "").toLowerCase().includes("perma.cc")) return true;
+      return false;
+    },
+
     async _processItem(itemID, apiKey) {
       const item = await Zotero.Items.getAsync(itemID);
       if (!item || !this.ARCHIVE_TYPES.has(item.itemType)) return;
 
       const url = item.getField("url") || "";
       if (!url) return;
-
-      const place = item.getField("place") || "";
-      if (place.toLowerCase().includes("perma.cc")) return;
-      const extra = item.getField("extra") || "";
-      if (extra.toLowerCase().includes("perma.cc")) return;
-      if (url.toLowerCase().includes("perma.cc")) return;
+      if (this._alreadyArchived(item)) return;
 
       Zotero.log("Perma Archiver: archiving [" + item.itemType + "] " + url);
       await Zotero.Promise.delay(1500);
 
       const permaUrl = await this._callPerma(url, apiKey);
-      if (!permaUrl) return;
+      if (!permaUrl) {
+        try { item.addTag("perma-failed"); await item.saveTx(); } catch(e) {}
+        return;
+      }
+
+      // Remove failed tag from any previous attempt
+      item.removeTag("perma-failed");
 
       // Dynamically check if "place" field is valid for this item type
       const placeFieldID = Zotero.ItemFields.getID("place");
@@ -100,6 +108,59 @@ if (!window._permaArchiver) {
           win.setTimeout(() => win.ZoteroPane.clearItemsPaneMessage?.(), 4000);
         }
       } catch(e) {}
+    },
+
+    // ── Batch archive ────────────────────────────────────
+
+    async batchArchive(window) {
+      const key = this._getKey();
+      if (!key) {
+        Services.prompt.alert(window, "Perma Archiver",
+          "Please set your API key first.\nTools \u2192 Perma Archiver \u2192 Set API Key\u2026");
+        return;
+      }
+
+      const pane = window.ZoteroPane;
+      const selected = pane.getSelectedItems();
+      const toArchive = selected.filter(item =>
+        this.ARCHIVE_TYPES.has(item.itemType) && !this._alreadyArchived(item)
+      );
+
+      if (toArchive.length === 0) {
+        Services.prompt.alert(window, "Perma Archiver",
+          "No unarchived items selected.\n\n" +
+          "Supported types: Webpage \u00b7 Blog Post \u00b7 Newspaper \u00b7 Magazine \u00b7 Forum Post \u00b7 Preprint");
+        return;
+      }
+
+      const ok = Services.prompt.confirm(window,
+        "Perma Archiver \u2014 Batch Archive",
+        "Archive " + toArchive.length + " item(s) to perma.cc?"
+      );
+      if (!ok) return;
+
+      for (let i = 0; i < toArchive.length; i++) {
+        pane.setItemsPaneMessage(
+          "Perma Archiver: archiving " + (i + 1) + " / " + toArchive.length + "\u2026"
+        );
+        try { await this._processItem(toArchive[i].id, key); }
+        catch(e) { Zotero.log("Perma Archiver: batch error: " + e); }
+        if (i < toArchive.length - 1) await Zotero.Promise.delay(1000);
+      }
+
+      // Tally results
+      let success = 0, failed = 0;
+      for (const item of toArchive) {
+        const fresh = Zotero.Items.get(item.id);
+        if (this._alreadyArchived(fresh)) success++;
+        else failed++;
+      }
+
+      pane.clearItemsPaneMessage?.();
+      Services.prompt.alert(window, "Perma Archiver \u2014 Done",
+        "\u2713 Archived: " + success +
+        (failed > 0 ? "\n\u2717 Failed: " + failed + "  (tagged \u201cperma-failed\u201d)" : "\nAll succeeded!")
+      );
     },
 
     // ── perma.cc API ─────────────────────────────────────
