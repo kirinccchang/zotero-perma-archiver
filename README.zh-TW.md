@@ -6,7 +6,7 @@
 
 ![Zotero](https://img.shields.io/badge/Zotero-7%20%7C%208-CC2936?style=for-the-badge&logo=zotero&logoColor=white)
 ![GitHub release](https://img.shields.io/github/v/release/kirinccchang/zotero-perma-archiver?style=for-the-badge)
-![License](https://img.shields.io/github/license/kirinccchang/zotero-perma-archiver?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen?style=for-the-badge)
 
 </div>
 
