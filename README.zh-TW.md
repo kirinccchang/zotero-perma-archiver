@@ -135,9 +135,16 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 ---
 
-### 步驟三：安裝 Bluebook 引用格式樣式
+### 步驟三：安裝 Bluebook 引用格式樣式（選用——僅限 Word 使用者）
 
-此步驟讓 Zotero 產生引用時自動加上 Bluebook Rule 18.2.1(d) 要求的 `[https://perma.cc/...]` 括號。你下載的是一個告訴 Zotero「如何排版腳注」的小檔案，不需要任何技術知識。
+> [!NOTE]
+> **步驟一和步驟二就已完整。** 安裝外掛並輸入金鑰後，perma.cc 連結會直接寫入你的 Zotero 條目，你可以在 Zotero 中查看、手動複製，或依需求使用。
+>
+> 步驟三僅適用於使用 **Zotero 的 Word 插件**在 Microsoft Word 或 Google Docs 中插入引用的使用者。安裝後，腳注中的 `[https://perma.cc/...]` 括號會自動出現。
+>
+> Zotero 的 Word 插件隨 Zotero 桌面版自動安裝至 Word。若尚未設定，請參考 [Zotero 文書處理器插件說明文件](https://www.zotero.org/support/word_processor_plugin_usage)。
+
+此步驟下載一個告訴 Zotero「如何排版 Bluebook 腳注」的小檔案，不需要任何技術知識。
 
 1. 點此下載：**[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
    - 若瀏覽器將其顯示為純文字而非下載，請右鍵點擊連結，選擇**另存連結為（Save Link As…）**。
@@ -150,10 +157,10 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 5. 選取剛才下載的 `.csl` 檔案，點 **Open（開啟）**。
 
-6. 之後在 Word 中插入引用或產生參考書目時，選擇 **Bluebook Law Review (perma.cc)** 作為引用樣式。
+6. 之後在 Word 或 Google Docs 中插入引用時，選擇 **Bluebook Law Review (perma.cc)** 作為引用樣式。
 
 > [!TIP]
-> 安裝完成後，樣式會自動運作。只要照常在 Word 中使用 Zotero 的「Add/Edit Citation」功能，perma.cc 連結就會自動出現，不需要任何額外操作。
+> 安裝完成後，樣式會自動運作。只要照常使用 Zotero 的「Add/Edit Citation」功能，perma.cc 連結就會自動出現，不需要任何額外操作。
 
 ---
 
@@ -164,9 +171,10 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 安裝外掛並輸入 API 金鑰後，**每次新儲存都全自動處理**：
 
 1. 你點一下 Zotero 瀏覽器擴充功能圖示，儲存任何有網址的條目
-2. 外掛在背景呼叫 perma.cc（需要幾秒鐘）
-3. 封存網址自動寫入你的 Zotero 條目
-4. 在 Word 中插入引用時，輸出如下：
+2. 外掛在背景自動完成封存（需要幾秒鐘）
+3. perma.cc 連結直接寫入你的 Zotero 條目，可在條目詳細資訊中查看
+
+若你使用 Zotero 的 Word 插件（步驟三），引用腳注會自動加上 perma.cc 括號：
 
 ```
 Rebecca J. Rose, The Law as Justice Gorsuch Sees It, Atlantic (Aug. 5, 2024),
