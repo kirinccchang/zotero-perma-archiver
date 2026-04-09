@@ -12,16 +12,7 @@
 
 **Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it. Already have a library full of unarchived items? Select them, right-click, and archive them all at once. The `[perma.cc/...]` link appears in your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance — no technical knowledge required.**
 
-Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law.
-
----
-
-> [!TIP]
-> **In plain English:** Two workflows, both automatic:
->
-> **New items:** You save a webpage (or any item with a URL) in Zotero → the plugin archives it to perma.cc in the background → your Bluebook citations automatically include the `[perma.cc/...]` bracket. No extra steps.
->
-> **Existing library:** Already have hundreds of unarchived items? Select them all, right-click, choose **Archive to Perma.cc** — done. The plugin works through your backlog and tags any failures so nothing slips through.
+Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law; Affiliated Researcher, AI and Future of Work Initiative, Emory University School of Law (former Associate Director and Academic Researcher).
 
 ---
 
@@ -29,8 +20,17 @@ Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow
 
 **[Zotero](https://www.zotero.org/)** is a free tool that saves webpages and articles into a research library with one click. **[Perma.cc](https://perma.cc)** is a free archiving service run by Harvard Law School that creates a permanent, unchanging copy of any webpage — so your citations never go dead. This plugin connects the two automatically.
 
+The **Bluebook 22nd edition (2025)** made archiving internet citations **mandatory**. Studies show that over 70% of URLs cited in the Harvard Law Review no longer work. The traditional fix — manually visiting perma.cc for each URL, copying the archive link, and pasting it back into Zotero — takes five steps per item and is easy to skip.
+
+> [!TIP]
+> **In plain English:** Two workflows, both automatic:
+>
+> **New items:** You save a webpage in Zotero → the plugin archives it to perma.cc in the background → your Bluebook citations automatically include the `[perma.cc/...]` bracket. No extra steps.
+>
+> **Existing library:** Already have hundreds of unarchived items? Select them all, right-click, choose **Archive to Perma.cc** — done. The plugin works through your backlog and tags any failures so nothing slips through.
+
 > [!NOTE]
-> **New to Zotero or perma.cc?** Expand the section below for a full explanation of what these tools are, why citations rot, and what the Bluebook 22nd edition now requires.
+> **Want the full background?** Expand below for a detailed explanation of link rot, how perma.cc works, and exactly what Rule 18.2.1(d) requires.
 
 <details>
 <summary>▶ What is Zotero? What is perma.cc? Why does this exist? (click to expand)</summary>
