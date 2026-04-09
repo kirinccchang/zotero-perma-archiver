@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Perma Archiver",
+  "version": "1.2.0",
+  "description": "Automatically archives webpages to perma.cc when saved in Zotero. Saves archive URL to Place field for Bluebook 22nd ed. Rule 18.2.1(d) compliance.",
+  "author": "Kirin Chang (USALI, NYU School of Law)",
+  "icons": {
+    "48": "icon48.png",
+    "96": "icon96.png"
+  },
+  "applications": {
+    "zotero": {
+      "id": "perma-archiver@kirinchang.law",
+      "strict_min_version": "7.0",
+      "strict_max_version": "8.0.*",
+      "update_url": "https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/update.json"
+    }
+  }
+}
