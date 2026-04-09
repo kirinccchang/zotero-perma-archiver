@@ -10,14 +10,18 @@
 
 </div>
 
-**Automatically archives webpages to [perma.cc](https://perma.cc) when you save them in Zotero, and adds the `[perma.cc/...]` link to your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance with no extra steps.**
+**Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it — and lets you retroactively batch-archive your entire existing library in one click. Adds the `[perma.cc/...]` link to your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance with no extra steps.**
 
 Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law.
 
 ---
 
 > [!TIP]
-> **In plain English:** You save a webpage in Zotero → this plugin automatically creates a permanent archived copy at perma.cc → your Bluebook citations automatically include the `[perma.cc/...]` link required by the 22nd edition. No extra steps.
+> **In plain English:** Two workflows, both automatic:
+>
+> **New items:** You save a webpage (or any item with a URL) in Zotero → the plugin archives it to perma.cc in the background → your Bluebook citations automatically include the `[perma.cc/...]` bracket. No extra steps.
+>
+> **Existing library:** Already have hundreds of unarchived items? Select them all, right-click, choose **Archive to Perma.cc** — done. The plugin works through your backlog and tags any failures so nothing slips through.
 
 ---
 
@@ -145,9 +149,11 @@ This step makes your Zotero citations automatically include the `[https://perma.
 
 ## What happens after setup
 
-Once the plugin is installed and your API key is entered, **everything is automatic**:
+### Automatic archiving — new saves
 
-1. You click the Zotero browser extension icon to save a webpage
+Once the plugin is installed and your API key is entered, **every new save is handled automatically**:
+
+1. You click the Zotero browser extension icon to save any item with a URL
 2. The plugin calls perma.cc in the background (takes a few seconds)
 3. The archived URL is saved to your Zotero item
 4. When you insert a citation in Word, it looks like this:
@@ -158,7 +164,18 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 (last visited Apr. 9, 2026) [https://perma.cc/PT32-56LR].
 ```
 
-**Supported item types:** Webpage · Blog Post · Newspaper Article · Magazine Article · Forum Post · Preprint
+### Batch archiving — your existing library
+
+Already have items in Zotero that were saved before you installed this plugin? You can archive them all retroactively:
+
+1. Select any items in your Zotero library (use **⌘A** or **Ctrl+A** to select all, or hold **⌘/Ctrl** to pick specific ones)
+2. Right-click the selection
+3. Choose **Archive to Perma.cc**
+4. Confirm — the plugin works through each item and shows a summary when done
+
+Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed`** so you can find and handle them manually. If you retry and it succeeds, the tag is removed.
+
+**Works with any Zotero item that has a URL** — webpages, blog posts, newspaper articles, reports, government documents, and more.
 
 ---
 
@@ -199,7 +216,7 @@ Make sure you selected **Bluebook Law Review (perma.cc)** as your citation style
 
 Check that:
 1. You completed Step 2 (entered your API key)
-2. The item type is supported (Webpage, Blog Post, Newspaper Article, Magazine Article, Forum Post, or Preprint)
+2. The item has a URL field (the plugin archives any item with a URL)
 3. Archiving is enabled: **Tools → Perma Archiver → Enable** should be checked
 
 </details>
