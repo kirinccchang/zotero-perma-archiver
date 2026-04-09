@@ -21,6 +21,46 @@ Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow
 
 ---
 
+## What is this? Why does it exist?
+
+> [!NOTE]
+> **New to Zotero or perma.cc?** Expand the section below for a plain-English explanation of what these tools are, why citations rot, and what the 22nd edition requires.
+
+<details>
+<summary>▶ What is Zotero? What is perma.cc? Why does this exist? (click to expand)</summary>
+
+### What is Zotero?
+
+[Zotero](https://www.zotero.org/) is a free, open-source reference manager. When you're reading an article, webpage, or court opinion in your browser, clicking the Zotero browser extension saves it to your library — title, author, date, URL, and all. Later, Zotero can automatically generate footnotes and bibliographies in any citation style.
+
+### What is perma.cc?
+
+[Perma.cc](https://perma.cc) is a web archiving service created by Harvard Law School's Berkman Klein Center, purpose-built for legal citations. It creates a permanent, immutable snapshot of a webpage at the moment of capture and stores it at a stable short URL (e.g., `https://perma.cc/PT32-56LR`) that never changes — even if the original page is later deleted or altered. It is the archiving service named in the Bluebook itself.
+
+### The problem: link rot
+
+Studies have found that **more than 70% of URLs cited in the Harvard Law Review** no longer link to the originally cited content. Over **50% of URLs in U.S. Supreme Court opinions** are affected. Within just one year of publication, roughly 20% of cited links are already dead; after five years, it's over 50%.
+
+This matters because legal argument depends on the reader being able to verify the cited source. A dead link makes a citation functionally unverifiable — and the problem is permanent.
+
+### What changed in the 22nd edition (2025)?
+
+The **21st edition** encouraged archiving internet sources as best practice but left it optional.
+
+The **22nd edition (2025)** made it **mandatory**: all cited online content must be "captured and stored in a permanent setting." There are three compliant methods:
+
+| Method | When to use |
+|--------|-------------|
+| Perma.cc or equivalent archive | Standard method for publicly accessible pages (blogs, news, government sites) |
+| Permanent URL (DOI / Handle) | If the source already has a stable permanent identifier — no archive needed |
+| Local copy `(on file with the author)` | For paywalled content |
+
+Law review editors are now expected to reject citations to internet sources that lack a compliant archive link.
+
+</details>
+
+---
+
 ## Before You Start
 
 You will need:
@@ -111,46 +151,6 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 ```
 
 **Supported item types:** Webpage · Blog Post · Newspaper Article · Magazine Article · Forum Post · Preprint
-
----
-
-## Why this matters — Bluebook Rule 18.2.1(d)
-
-> [!NOTE]
-> **New to Zotero or perma.cc?** Expand the section below for a plain-English explanation of what these tools are, why citations rot, and what the 22nd edition requires.
-
-<details>
-<summary>▶ What is Zotero? What is perma.cc? Why does this exist? (click to expand)</summary>
-
-### The problem: link rot
-
-Studies have found that **more than 70% of URLs cited in the Harvard Law Review** no longer link to the originally cited content. Over **50% of URLs in U.S. Supreme Court opinions** are affected. Within just one year of publication, roughly 20% of cited links are already dead; after five years, it's over 50%.
-
-This matters because legal argument depends on the reader being able to verify the cited source. A dead link makes a citation functionally unverifiable — and the problem is permanent.
-
-### What is Zotero?
-
-[Zotero](https://www.zotero.org/) is a free, open-source reference manager. When you're reading an article, webpage, or court opinion in your browser, clicking the Zotero browser extension saves it to your library — title, author, date, URL, and all. Later, Zotero can automatically generate footnotes and bibliographies in any citation style.
-
-### What is perma.cc?
-
-[Perma.cc](https://perma.cc) is a web archiving service created by Harvard Law School's Berkman Klein Center, purpose-built for legal citations. It creates a permanent, immutable snapshot of a webpage at the moment of capture and stores it at a stable short URL (e.g., `https://perma.cc/PT32-56LR`) that never changes — even if the original page is later deleted or altered. It is the archiving service named in the Bluebook itself.
-
-### What changed in the 22nd edition (2025)?
-
-The **21st edition** encouraged archiving internet sources as best practice but left it optional.
-
-The **22nd edition (2025)** made it **mandatory**: all cited online content must be "captured and stored in a permanent setting." There are three compliant methods:
-
-| Method | When to use |
-|--------|-------------|
-| Perma.cc or equivalent archive | Standard method for publicly accessible pages (blogs, news, government sites) |
-| Permanent URL (DOI / Handle) | If the source already has a stable permanent identifier — no archive needed |
-| Local copy `(on file with the author)` | For paywalled content |
-
-Law review editors are now expected to reject citations to internet sources that lack a compliant archive link.
-
-</details>
 
 ---
 
