@@ -12,8 +12,9 @@
   3. Stricter URL suppression: no URLs for article-journal, book, chapter,
      legal_case, legislation (per Bluebook practice)
   4. Rule 18.2.1(d) / 22nd ed.: archiving REQUIRED for web sources.
-     → Paste perma.cc URL directly into Zotero "Extra" field (no prefix).
-     → Outputs: URL (last visited DATE, archived at PERMA_URL)
+     → XPI auto-saves perma.cc URL to Zotero "Place" field (= CSL publisher-place).
+     → Manual: paste https://perma.cc/XXXX-XXXX directly into Place field.
+     → Outputs: URL (last visited DATE) [PERMA_URL]
   5. Rule 15.1 / 22nd ed.: et-al-min="4" (up to 3 authors listed in full;
      only 4+ authors collapse to et al.) — already correct in Base, kept.
   6. Legislation type: full support (§ sections, no-supra short form)
@@ -24,7 +25,7 @@
       font-variant="small-caps" unchanged in CSL)
   
   ZOTERO USAGE NOTES:
-  - "Extra" field = paste perma.cc URL directly (e.g. https://perma.cc/XXXX-XXXX)
+  - "Place" field = perma.cc URL (auto-set by XPI; or paste manually, e.g. https://perma.cc/XXXX-XXXX)
   - "Status" field = "forthcoming" for in-press articles
   - For legal_case subsequent short form, fill "Title Short" in Zotero
   - locator types: "page" → "at X"; "paragraph" → "¶ X"; "note" → "n.X"
@@ -41,6 +42,7 @@
     <author>
       <name>Kirin Chang</name>
       <email>cc6614@nyu.edu</email>
+      <uri>https://kirinchang.com/</uri>
     </author>
     <contributor>
       <name>Bruce D'Arcus</name>
@@ -149,8 +151,8 @@
   <!-- ============================================================ -->
   <!--  ACCESS MACRO                                                 -->
   <!--  Bluebook 22nd ed. Rule 18.2.1(d): archiving now REQUIRED    -->
-  <!--  Perma.cc URL: paste directly into Zotero "Extra" field      -->
-  <!--  (no prefix needed). Zotero maps raw Extra text → CSL `note`.-->
+  <!--  Perma.cc URL: stored in Zotero "Place" field → CSL publisher-place. -->
+  <!--  Auto-set by XPI. Manual: paste https://perma.cc/… into Place.     -->
   <!--  URL suppressed for: cases, statutes, journal articles,      -->
   <!--  books, and chapters (per Bluebook practice).                -->
   <!-- ============================================================ -->
