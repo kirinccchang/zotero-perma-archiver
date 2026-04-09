@@ -82,7 +82,17 @@ if (!window._permaArchiver) {
       const permaUrl = await this._callPerma(url, apiKey);
       if (!permaUrl) return;
 
-      item.setField("place", permaUrl);
+      // blogPost and forumPost don't have a "place" field — store in extra instead
+      const NO_PLACE = new Set(["blogPost", "forumPost"]);
+      if (!NO_PLACE.has(item.itemType)) {
+        item.setField("place", permaUrl);
+      } else {
+        let extra = item.getField("extra") || "";
+        if (!extra.includes("perma.cc")) {
+          extra = extra ? extra.trimEnd() + "\nArchive: " + permaUrl : "Archive: " + permaUrl;
+          item.setField("extra", extra);
+        }
+      }
       await item.saveTx();
       Zotero.log("Perma Archiver: done → " + permaUrl);
 
@@ -118,6 +128,8 @@ if (!window._permaArchiver) {
       }
       if (resp.status === 201) {
         const data = await resp.json();
+        Zotero.log("Perma Archiver: API response keys: " + Object.keys(data).join(", "));
+        Zotero.log("Perma Archiver: links_remaining = " + JSON.stringify(data.links_remaining));
         const remaining = data.links_remaining;
         if (typeof remaining === "number") {
           const folderKey  = this._getFolderID() ? String(this._getFolderID()) : "personal";
