@@ -133,7 +133,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 
 此步驟讓 Zotero 產生引用時自動加上 Bluebook Rule 18.2.1(d) 要求的 `[https://perma.cc/...]` 括號。
 
-1. 點此下載：**[bluebook-law-review-KC.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-KC.csl)**
+1. 點此下載：**[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
    - 若瀏覽器將其顯示為純文字而非下載，請右鍵點擊連結，選擇**另存連結為（Save Link As…）**。
 
 2. 在 Zotero 中開啟**設定（Settings）**（Mac：**Zotero → Settings**；Windows：**Edit → Preferences**）。
@@ -144,7 +144,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 
 5. 選取剛才下載的 `.csl` 檔案，點 **Open（開啟）**。
 
-6. 之後在 Word 中插入引用或產生參考書目時，選擇 **Bluebook Law Review (Kirin Chang)** 作為引用樣式。
+6. 之後在 Word 中插入引用或產生參考書目時，選擇 **Bluebook Law Review (perma.cc)** 作為引用樣式。
 
 > [!TIP]
 > 安裝完成後，樣式會自動運作。只要照常在 Word 中使用 Zotero 的「Add/Edit Citation」功能，perma.cc 連結就會自動出現，不需要任何額外操作。
@@ -198,7 +198,7 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 <details>
 <summary>引用中沒有出現封存網址</summary>
 
-請確認你選擇的是 **Bluebook Law Review (Kirin Chang)** 樣式，而非 Zotero 內建的預設「Bluebook Law Review」樣式。只有 KC 版本才包含 perma.cc 括號。
+請確認你選擇的是 **Bluebook Law Review (perma.cc)** 樣式，而非 Zotero 內建的預設「Bluebook Law Review」樣式。只有 perma.cc 版本才包含 perma.cc 括號。
 
 </details>
 
