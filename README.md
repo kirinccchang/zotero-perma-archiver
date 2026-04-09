@@ -75,7 +75,7 @@ You will need:
 
 ### Step 1 — Download and install the plugin file
 
-1. Click here to download: **[perma-archiver_v1.2.0.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.0/perma-archiver_v1.2.0.xpi)**
+1. Click here to download: **[perma-archiver_v1.2.1.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.1.xpi)**
    - Your browser may warn you about downloading a `.xpi` file — this is normal. Allow the download.
    - Save it somewhere easy to find (e.g., your Desktop).
 
@@ -190,7 +190,7 @@ Try clearing the Zotero extension cache:
 <details>
 <summary>Archives not appearing in citations</summary>
 
-Make sure you selected **Bluebook Law Review (perma.cc)** as your citation style — not the default "Bluebook Law Review" style that came with Zotero. Only the KC version includes the perma.cc bracket.
+Make sure you selected **Bluebook Law Review (perma.cc)** as your citation style — not the default "Bluebook Law Review" style that came with Zotero. Only the perma.cc version includes the perma.cc bracket.
 
 </details>
 
