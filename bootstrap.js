@@ -36,6 +36,7 @@ function startup({ id, version, rootURI }, reason) {
 
   win.setTimeout(() => {
     _injectMenu(win);
+    _injectContextMenu(win);
     if (!_getKey()) _promptFirstRun(win);
   }, 1000);
 }
@@ -49,13 +50,15 @@ function onMainWindowLoad({ window }) {
   Services.console.logStringMessage("Perma Archiver: onMainWindowLoad() called");
   window.setTimeout(() => {
     _injectMenu(window);
+    _injectContextMenu(window);
     if (!_getKey()) _promptFirstRun(window);
   }, 800);
 }
 
 function onMainWindowUnload({ window }) {
-  const el = window.document.getElementById(MENU_ID);
-  if (el) el.remove();
+  const doc = window.document;
+  ["perma-archiver-menu", "perma-archiver-ctx-sep", "perma-archiver-ctx-item"]
+    .forEach(id => { const el = doc.getElementById(id); if (el) el.remove(); });
 }
 
 // ── Menu ───────────────────────────────────────────────────
@@ -124,6 +127,32 @@ function _injectMenu(window) {
     Services.console.logStringMessage("Perma Archiver: menu injected ✓");
   } catch(e) {
     Services.console.logStringMessage("Perma Archiver: _injectMenu error: " + e);
+  }
+}
+
+// ── Context menu (right-click on items) ────────────────────
+
+function _injectContextMenu(window) {
+  try {
+    const doc  = window.document;
+    const menu = doc.getElementById("zotero-itemmenu");
+    if (!menu) return;
+    if (doc.getElementById("perma-archiver-ctx-item")) return;
+
+    const sep = doc.createXULElement("menuseparator");
+    sep.id = "perma-archiver-ctx-sep";
+
+    const item = doc.createXULElement("menuitem");
+    item.id = "perma-archiver-ctx-item";
+    item.setAttribute("label", "Archive to Perma.cc");
+    item.addEventListener("command", () => {
+      if (window._permaArchiver) window._permaArchiver.batchArchive(window);
+    });
+
+    menu.appendChild(sep);
+    menu.appendChild(item);
+  } catch(e) {
+    Services.console.logStringMessage("Perma Archiver: _injectContextMenu error: " + e);
   }
 }
 
