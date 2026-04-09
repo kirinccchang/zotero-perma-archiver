@@ -10,7 +10,7 @@
 
 </div>
 
-**Automatically archives webpages to [perma.cc](https://perma.cc) when you save them in Zotero — keeping your citations compliant with Bluebook 22nd ed. Rule 18.2.1(d).**
+**Automatically archives webpages to [perma.cc](https://perma.cc) when you save them in Zotero, and adds the `[perma.cc/...]` link to your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance with no extra steps.**
 
 Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, U.S.-Asia Law Institute, NYU School of Law.
 
