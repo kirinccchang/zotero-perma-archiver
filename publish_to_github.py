@@ -5,12 +5,12 @@ publish_to_github.py
 自動把 Perma Archiver 的所有檔案推送到 GitHub。
 
 功能：
-  - 上傳 XPI 到 GitHub Releases
-  - 上傳 update.json、README.md、CSL 到 repo 根目錄
+  - 上傳 XPI 到 GitHub Releases（若 Release 已存在則替換 asset，不刪 Release）
+  - 上傳 update.json、README.md、README.zh-TW.md、CSL、LICENSE、源碼 到 repo 根目錄
   - 自動計算 SHA-256 hash 並更新 update.json
 
 使用方式：
-  1. 設定下面的 CONFIG
+  1. export GITHUB_TOKEN="github_pat_..."
   2. pip install requests
   3. python3 publish_to_github.py
 
@@ -23,23 +23,22 @@ import json
 import base64
 import os
 import sys
-import zipfile
+import time
 from pathlib import Path
 
 # ============================================================
 #  CONFIG — 每次發版只需要改 VERSION
 # ============================================================
 
-GITHUB_TOKEN = "YOUR_GITHUB_TOKEN"   # github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "YOUR_GITHUB_TOKEN")
 GITHUB_USER  = "kirinccchang"
 GITHUB_REPO  = "zotero-perma-archiver"
 PLUGIN_ID    = "perma-archiver@kirinchang.law"
-VERSION      = "1.2.1"
+VERSION      = "1.2.2"
 
 # 本機檔案路徑（相對於這個腳本的位置）
 XPI_FILE     = f"perma-archiver_v{VERSION}.xpi"
 CSL_FILE     = "bluebook-law-review-perma.csl"
-README_FILE  = "README.md"
 
 # ============================================================
 #  HELPERS
@@ -90,51 +89,66 @@ def upload_file(path_in_repo, local_path, commit_msg):
     else:
         err(f"Failed to upload {path_in_repo}: {r.status_code} {r.text[:200]}")
 
-def create_release(version, xpi_path):
-    """Create a GitHub Release and upload the XPI."""
+def get_or_create_release(version, xpi_path):
+    """
+    Get existing release or create a new one.
+    NEVER deletes a release — instead replaces the XPI asset in place.
+    This avoids the 'untagged-...' URL bug caused by delete+recreate race conditions.
+    """
     tag = f"v{version}"
+    xpi_name = os.path.basename(xpi_path)
 
     # Check if release already exists
     r = requests.get(f"{BASE_URL}/releases/tags/{tag}", headers=HEADERS)
     if r.status_code == 200:
-        log(f"Release {tag} already exists — deleting and recreating...")
-        release_id = r.json()["id"]
-        requests.delete(f"{BASE_URL}/releases/{release_id}", headers=HEADERS)
-        # Delete tag too
-        requests.delete(f"{BASE_URL}/git/refs/tags/{tag}", headers=HEADERS)
+        release = r.json()
+        release_id = release["id"]
+        upload_url = release["upload_url"].replace("{?name,label}", "")
+        log(f"Release {tag} already exists (id={release_id}) — replacing XPI asset...")
 
-    # Create release
-    payload = {
-        "tag_name": tag,
-        "name": f"Perma Archiver v{version}",
-        "body": f"""## Perma Archiver v{version}
+        # Delete existing XPI asset if present
+        for asset in release.get("assets", []):
+            if asset["name"] == xpi_name:
+                del_r = requests.delete(
+                    f"{BASE_URL}/releases/assets/{asset['id']}",
+                    headers=HEADERS
+                )
+                if del_r.status_code == 204:
+                    log(f"Deleted old asset: {asset['name']}")
+                else:
+                    log(f"Warning: could not delete old asset ({del_r.status_code})")
+                break
+    else:
+        # Create new release
+        payload = {
+            "tag_name": tag,
+            "name": f"Perma Archiver v{version}",
+            "body": f"""## Perma Archiver v{version}
 
 ### Installation
-1. Download `{os.path.basename(xpi_path)}` below
+1. Download `{xpi_name}` below
 2. In Zotero: **Tools → Plugins → ⚙️ → Install Add-on From File…**
 3. Restart Zotero
 4. **Tools → Perma Archiver → Set API Key…**
 
 ### What's included
-- `{os.path.basename(xpi_path)}` — Zotero plugin
-- `bluebook-law-review-KC.csl` — Bluebook CSL style with perma.cc support
+- `{xpi_name}` — Zotero plugin
+- `bluebook-law-review-perma.csl` — Bluebook CSL style with perma.cc support
 - `update.json` — Auto-update manifest
 
 See [README](https://github.com/{GITHUB_USER}/{GITHUB_REPO}#readme) for full documentation.
 """,
-        "draft": False,
-        "prerelease": False,
-    }
-    r = requests.post(f"{BASE_URL}/releases", headers=HEADERS, json=payload)
-    if r.status_code != 201:
-        err(f"Failed to create release: {r.status_code} {r.text[:300]}")
-
-    release = r.json()
-    upload_url = release["upload_url"].replace("{?name,label}", "")
-    ok(f"Created release {tag}")
+            "draft": False,
+            "prerelease": False,
+        }
+        r = requests.post(f"{BASE_URL}/releases", headers=HEADERS, json=payload)
+        if r.status_code != 201:
+            err(f"Failed to create release: {r.status_code} {r.text[:300]}")
+        release = r.json()
+        upload_url = release["upload_url"].replace("{?name,label}", "")
+        ok(f"Created release {tag}")
 
     # Upload XPI asset
-    xpi_name = os.path.basename(xpi_path)
     with open(xpi_path, 'rb') as f:
         xpi_data = f.read()
 
@@ -150,7 +164,10 @@ See [README](https://github.com/{GITHUB_USER}/{GITHUB_REPO}#readme) for full doc
     else:
         err(f"Failed to upload XPI: {r.status_code} {r.text[:200]}")
 
-def generate_update_json(version, xpi_url, xpi_hash, output_path):
+def generate_update_json(version, xpi_hash, output_path):
+    # Hardcode the canonical URL — never use GitHub's returned URL
+    # which can be 'untagged-...' if the release was just created
+    xpi_url = f"https://github.com/{GITHUB_USER}/{GITHUB_REPO}/releases/download/v{version}/perma-archiver_v{version}.xpi"
     update = {
         "addons": {
             PLUGIN_ID: {
@@ -175,18 +192,31 @@ def generate_update_json(version, xpi_url, xpi_hash, output_path):
 
 def main():
     if GITHUB_TOKEN == "YOUR_GITHUB_TOKEN":
-        err("請先設定 GITHUB_TOKEN")
+        err("請先設定環境變數：export GITHUB_TOKEN='github_pat_...'")
 
-    script_dir = Path(__file__).parent
-    xpi_path    = script_dir / XPI_FILE
-    csl_path    = script_dir / CSL_FILE
-    readme_path = script_dir / README_FILE
-    update_path = script_dir / "update.json"
+    script_dir   = Path(__file__).parent
+    xpi_path     = script_dir / XPI_FILE
+    csl_path     = script_dir / CSL_FILE
+    readme_path  = script_dir / "README.md"
+    readme_zh_path = script_dir / "README.zh-TW.md"
+    license_path = script_dir / "LICENSE"
+    bootstrap_path = script_dir / "bootstrap.js"
+    content_path = script_dir / "content.js"
+    manifest_path = script_dir / "manifest.json"
+    update_path  = script_dir / "update.json"
 
-    # Check files exist
-    for p in [xpi_path, csl_path, readme_path]:
+    # Check required files exist
+    for p in [xpi_path, csl_path, readme_path, readme_zh_path, license_path,
+              bootstrap_path, content_path, manifest_path]:
         if not p.exists():
             err(f"找不到檔案：{p}")
+
+    # Check README download URLs are consistent with VERSION
+    expected_url_fragment = f"/releases/download/v{VERSION}/perma-archiver_v{VERSION}.xpi"
+    for readme in [readme_path, readme_zh_path]:
+        text = readme.read_text()
+        if f"perma-archiver_v{VERSION}.xpi" in text and expected_url_fragment not in text:
+            err(f"{readme.name} 下載連結版本不一致——請確認路徑和檔名都是 v{VERSION}")
 
     print(f"\n{'='*50}")
     print(f"  Publishing Perma Archiver v{VERSION}")
@@ -198,22 +228,27 @@ def main():
     xpi_hash = sha256_of_file(xpi_path)
     ok(f"SHA-256: {xpi_hash[:16]}...")
 
-    # 2. Create Release + upload XPI
-    log("Creating GitHub Release...")
-    xpi_url = create_release(VERSION, xpi_path)
+    # 2. Get or create Release + upload XPI (never deletes release)
+    log("Uploading XPI to GitHub Release...")
+    get_or_create_release(VERSION, xpi_path)
 
-    # 3. Generate update.json
+    # 3. Generate update.json with hardcoded canonical URL
     log("Generating update.json...")
-    generate_update_json(VERSION, xpi_url, xpi_hash, update_path)
+    generate_update_json(VERSION, xpi_hash, update_path)
 
-    # 4. Upload files to repo
+    # 4. Upload all files to repo
     log("Uploading files to repo...")
-    upload_file("update.json",                update_path, f"Update update.json for v{VERSION}")
-    upload_file("bluebook-law-review-KC.csl", csl_path,   f"Update CSL style for v{VERSION}")
-    upload_file("README.md",                  readme_path, f"Update README for v{VERSION}")
+    upload_file("update.json",                    update_path,     f"v{VERSION}: update update.json")
+    upload_file("bluebook-law-review-perma.csl",  csl_path,        f"v{VERSION}: update CSL style")
+    upload_file("README.md",                      readme_path,     f"v{VERSION}: update README")
+    upload_file("README.zh-TW.md",               readme_zh_path,  f"v{VERSION}: update README (zh-TW)")
+    upload_file("LICENSE",                        license_path,    f"v{VERSION}: update LICENSE (MPL 2.0)")
+    upload_file("bootstrap.js",                   bootstrap_path,  f"v{VERSION}: update bootstrap.js")
+    upload_file("content.js",                     content_path,    f"v{VERSION}: update content.js")
+    upload_file("manifest.json",                  manifest_path,   f"v{VERSION}: update manifest.json")
 
     print(f"\n{'='*50}")
-    print(f"  🎉 Published successfully!")
+    print(f"  Published successfully!")
     print(f"  Release: https://github.com/{GITHUB_USER}/{GITHUB_REPO}/releases/tag/v{VERSION}")
     print(f"  Install: https://github.com/{GITHUB_USER}/{GITHUB_REPO}/releases/download/v{VERSION}/{XPI_FILE}")
     print(f"{'='*50}\n")
