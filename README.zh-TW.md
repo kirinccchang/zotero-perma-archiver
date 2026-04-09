@@ -6,7 +6,7 @@
 
 ![Zotero](https://img.shields.io/badge/Zotero-7%20%7C%208-CC2936?style=for-the-badge&logo=zotero&logoColor=white)
 ![GitHub release](https://img.shields.io/github/v/release/kirinccchang/zotero-perma-archiver?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MPL%202.0-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-AGPL%20v3-blue?style=for-the-badge)
 
 </div>
 
@@ -83,7 +83,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存支援的條目
 
 ### 步驟一：下載並安裝外掛檔案
 
-1. 點此下載：**[perma-archiver_v1.2.1.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.1.xpi)**
+1. 點此下載：**[perma-archiver_v1.2.2.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.2.1/perma-archiver_v1.2.2.xpi)**
    - 瀏覽器可能會警告你正在下載 `.xpi` 檔案——這是正常的，允許下載即可。
    - 存到容易找到的地方（例如桌面）。
 
@@ -224,9 +224,9 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 ## 授權
 
-Mozilla Public License 2.0。詳見 [LICENSE](LICENSE)。
+GNU Affero General Public License v3.0。詳見 [LICENSE](LICENSE)。
 
-> 對外掛原始碼的修改必須依 MPL 2.0 保持開放原始碼。附帶的 CSL 樣式（`bluebook-law-review-perma.csl`）依 CSL 專案規定，另以 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 授權。
+> 對外掛原始碼的修改必須依 AGPL-3.0 保持開放原始碼。附帶的 CSL 樣式（`bluebook-law-review-perma.csl`）依 CSL 專案規定，另以 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 授權。
 
 ## 致謝
 
