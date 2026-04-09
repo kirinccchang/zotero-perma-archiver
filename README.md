@@ -10,7 +10,7 @@
 
 </div>
 
-**Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it — and lets you retroactively batch-archive your entire existing library in one click. Adds the `[perma.cc/...]` link to your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance with no extra steps.**
+**Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it. Already have a library full of unarchived items? Select them, right-click, and archive them all at once. The `[perma.cc/...]` link appears in your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance — no technical knowledge required.**
 
 Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law.
 
@@ -27,8 +27,10 @@ Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow
 
 ## What is this? Why does it exist?
 
+**[Zotero](https://www.zotero.org/)** is a free tool that saves webpages and articles into a research library with one click. **[Perma.cc](https://perma.cc)** is a free archiving service run by Harvard Law School that creates a permanent, unchanging copy of any webpage — so your citations never go dead. This plugin connects the two automatically.
+
 > [!NOTE]
-> **New to Zotero or perma.cc?** Expand the section below for a plain-English explanation of what these tools are, why citations rot, and what the 22nd edition requires.
+> **New to Zotero or perma.cc?** Expand the section below for a full explanation of what these tools are, why citations rot, and what the Bluebook 22nd edition now requires.
 
 <details>
 <summary>▶ What is Zotero? What is perma.cc? Why does this exist? (click to expand)</summary>
@@ -125,9 +127,9 @@ By default, all archives are saved to your perma.cc **Personal Links** folder. I
 
 ---
 
-### Step 3 — Install the Bluebook CSL citation style
+### Step 3 — Install the Bluebook citation style
 
-This step makes your Zotero citations automatically include the `[https://perma.cc/...]` bracket required by Bluebook Rule 18.2.1(d).
+This step makes your Zotero citations automatically include the `[https://perma.cc/...]` bracket required by Bluebook Rule 18.2.1(d). You are downloading a small style file that tells Zotero how to format your footnotes — no technical knowledge needed.
 
 1. Click here to download: **[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
    - If your browser opens it as text instead of downloading, right-click the link and choose **Save Link As…**
@@ -173,7 +175,7 @@ Already have items in Zotero that were saved before you installed this plugin? Y
 3. Choose **Archive to Perma.cc**
 4. Confirm — the plugin works through each item and shows a summary when done
 
-Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed`** so you can find and handle them manually. If you retry and it succeeds, the tag is removed.
+Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed`** — a colored label that appears in your Zotero library so you can find and handle them manually. If you retry and it succeeds, the tag is removed automatically.
 
 **Works with any Zotero item that has a URL** — webpages, blog posts, newspaper articles, reports, government documents, and more.
 
