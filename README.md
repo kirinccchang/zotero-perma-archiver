@@ -109,7 +109,15 @@ You will need:
 > The plugin will not archive anything until you complete this step. Your API key is what connects the plugin to your perma.cc account.
 
 **Optional — Choose a save folder:**
-If you want archives saved to a specific folder in your perma.cc account (rather than the default Personal Links folder), go to **Tools → Perma Archiver → Choose Save Folder…**
+
+By default, all archives are saved to your perma.cc **Personal Links** folder. If you want them organized into a specific folder (e.g., a folder for a particular journal or project):
+
+1. In Zotero, go to **Tools → Perma Archiver → Choose Save Folder…**
+2. A list of your perma.cc folders will appear. Select the one you want.
+3. Click **OK** — all future archives will be saved there.
+
+> [!TIP]
+> Law school accounts often have shared organizational folders set up by the library. Ask your law librarian if your institution has a dedicated perma.cc folder for student journal work.
 
 ---
 
