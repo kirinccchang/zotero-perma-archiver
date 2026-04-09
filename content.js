@@ -75,6 +75,7 @@ if (!window._permaArchiver) {
       if (place.toLowerCase().includes("perma.cc")) return;
       const extra = item.getField("extra") || "";
       if (extra.toLowerCase().includes("perma.cc")) return;
+      if (url.toLowerCase().includes("perma.cc")) return;
 
       Zotero.log("Perma Archiver: archiving [" + item.itemType + "] " + url);
       await Zotero.Promise.delay(1500);
@@ -82,15 +83,14 @@ if (!window._permaArchiver) {
       const permaUrl = await this._callPerma(url, apiKey);
       if (!permaUrl) return;
 
-      // blogPost and forumPost don't have a "place" field — store in extra instead
+      // blogPost and forumPost don't have a "place" field — append perma link to url field
       const NO_PLACE = new Set(["blogPost", "forumPost"]);
       if (!NO_PLACE.has(item.itemType)) {
         item.setField("place", permaUrl);
       } else {
-        let extra = item.getField("extra") || "";
-        if (!extra.includes("perma.cc")) {
-          extra = extra ? extra.trimEnd() + "\nArchive: " + permaUrl : "Archive: " + permaUrl;
-          item.setField("extra", extra);
+        const currentUrl = item.getField("url") || "";
+        if (!currentUrl.includes("perma.cc")) {
+          item.setField("url", currentUrl + " [" + permaUrl + "]");
         }
       }
       await item.saveTx();
