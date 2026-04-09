@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Perma Archiver",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Automatically archives webpages to perma.cc when you save them in Zotero, and adds the [perma.cc/...] link to your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance with no extra steps.",
   "author": "Kirin Chang (USALI, NYU School of Law)",
   "icons": {
