@@ -163,7 +163,9 @@ Once the plugin is installed and your API key is entered, **every new save is ha
 
 1. You click the Zotero browser extension icon to save any item with a URL
 2. The plugin calls perma.cc in the background (takes a few seconds)
-3. The perma.cc link is saved directly into your Zotero item — visible in the item's details panel
+3. The perma.cc link is saved directly into your Zotero item. To see it: click the item in Zotero, then look at the **Info** tab on the right side panel.
+   - For most item types (news articles, web pages, government documents, etc.), it appears in the **Place** field.
+   - For blog posts and forum posts, which do not have a Place field, it is appended to the end of the **URL** field in brackets: `https://original-url [https://perma.cc/XXXX-XXXX]`.
 
 If you use Zotero's Word plugin (Step 3), citations will automatically include the perma.cc bracket:
 
