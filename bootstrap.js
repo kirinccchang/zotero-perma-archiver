@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 /**
- * Perma Archiver — bootstrap.js v1.3.0
+ * Perma Archiver — bootstrap.js v1.3.1
  * Menu: Set API Key, Choose Folder, separator, Enable/Disable, separator, About
  */
 "use strict";
