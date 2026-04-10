@@ -81,7 +81,7 @@ You will need:
 
 ### Step 1 — Download and install the plugin file
 
-1. Click here to download: **[perma-archiver_v1.3.1.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.1/perma-archiver_v1.3.1.xpi)**
+1. Click here to download: **[perma-archiver_v1.3.2.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.2/perma-archiver_v1.3.2.xpi)**
    - Your browser may warn you about downloading a `.xpi` file — this is normal. Allow the download.
    - Save it somewhere easy to find (e.g., your Desktop).
 
