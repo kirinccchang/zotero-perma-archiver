@@ -103,8 +103,11 @@ function _injectMenu(window) {
       if (!folderItem) return;
       const name = window._permaArchiver
         ? window._permaArchiver.getCurrentFolderName()
-        : "Personal Links";
-      folderItem.setAttribute("label", "Save Folder: \u201c" + name + "\u201d \u2014 Change\u2026");
+        : null;
+      const label = name
+        ? "Save Folder: \u201c" + name + "\u201d \u2014 Change\u2026"
+        : "Save Folder: Personal Links (default) \u2014 Change\u2026";
+      folderItem.setAttribute("label", label);
     });
 
     // Enable / Disable
