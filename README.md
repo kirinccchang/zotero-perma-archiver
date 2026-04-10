@@ -10,15 +10,15 @@
 
 </div>
 
-**Automatically archives any Zotero item with a URL to [perma.cc](https://perma.cc) when you save it. Already have a library full of unarchived items? Select them, right-click, and archive them all at once. The `[perma.cc/...]` link appears in your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance — no technical knowledge required.**
+**Automatically archives any Zotero item with a URL to <a href="https://perma.cc" target="_blank" rel="noopener noreferrer">perma.cc</a> when you save it. Already have a library full of unarchived items? Select them, right-click, and archive them all at once. The `[perma.cc/...]` link appears in your Word citations automatically. Bluebook 22nd ed. Rule 18.2.1(d) compliance — no technical knowledge required.**
 
-Developed by [Cheng-chi "Kirin" Chang](https://kirinchang.com/), Research Fellow, [U.S.-Asia Law Institute](https://usali.org/people#kirin-chang), NYU School of Law; Affiliated Researcher, AI and Future of Work Program, Emory University School of Law (former Associate Director and Academic Researcher).
+Developed by <a href="https://kirinchang.com/" target="_blank" rel="noopener noreferrer">Cheng-chi "Kirin" Chang</a>, Research Fellow, <a href="https://usali.org/people#kirin-chang" target="_blank" rel="noopener noreferrer">U.S.-Asia Law Institute</a>, NYU School of Law; Affiliated Researcher, AI and Future of Work Program, Emory University School of Law (former Associate Director and Academic Researcher).
 
 ---
 
 ## What is this? Why does it exist?
 
-**[Zotero](https://www.zotero.org/)** is a free tool that saves webpages and articles into a research library with one click. **[Perma.cc](https://perma.cc)** is a free archiving service run by Harvard Law School that creates a permanent, unchanging copy of any webpage — so your citations never go dead. This plugin connects the two automatically.
+**<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a>** is a free tool that saves webpages and articles into a research library with one click. **<a href="https://perma.cc" target="_blank" rel="noopener noreferrer">Perma.cc</a>** is a free archiving service run by Harvard Law School that creates a permanent, unchanging copy of any webpage — so your citations never go dead. This plugin connects the two automatically.
 
 The **Bluebook 22nd edition (2025)** made archiving internet citations **mandatory**. Studies show that over 70% of URLs cited in the Harvard Law Review no longer work. The traditional fix — manually visiting perma.cc for each URL, copying the archive link, and pasting it back into Zotero — takes five steps per item and is easy to skip.
 
@@ -37,11 +37,11 @@ The **Bluebook 22nd edition (2025)** made archiving internet citations **mandato
 
 ### What is Zotero?
 
-[Zotero](https://www.zotero.org/) is a free, open-source reference manager. When you're reading an article, webpage, or court opinion in your browser, clicking the Zotero browser extension saves it to your library — title, author, date, URL, and all. Later, Zotero can automatically generate footnotes and bibliographies in any citation style.
+<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a> is a free, open-source reference manager. When you're reading an article, webpage, or court opinion in your browser, clicking the Zotero browser extension saves it to your library — title, author, date, URL, and all. Later, Zotero can automatically generate footnotes and bibliographies in any citation style.
 
 ### What is perma.cc?
 
-[Perma.cc](https://perma.cc) is a web archiving service created by Harvard Law School's Berkman Klein Center, purpose-built for legal citations. It creates a permanent, immutable snapshot of a webpage at the moment of capture and stores it at a stable short URL (e.g., `https://perma.cc/PT32-56LR`) that never changes — even if the original page is later deleted or altered. It is the archiving service named in the Bluebook itself.
+<a href="https://perma.cc" target="_blank" rel="noopener noreferrer">Perma.cc</a> is a web archiving service created by Harvard Law School's Berkman Klein Center, purpose-built for legal citations. It creates a permanent, immutable snapshot of a webpage at the moment of capture and stores it at a stable short URL (e.g., `https://perma.cc/PT32-56LR`) that never changes — even if the original page is later deleted or altered. It is the archiving service named in the Bluebook itself.
 
 ### The problem: link rot
 
@@ -71,9 +71,12 @@ Law review editors are now expected to reject citations to internet sources that
 
 You will need:
 
-- [ ] **Zotero** installed on your computer → [Download free at zotero.org](https://www.zotero.org/download/)
-- [ ] **A perma.cc account** → [Register free at perma.cc](https://perma.cc/register) (takes 2 minutes; your law library may already have an institutional account)
-- [ ] **A perma.cc API key** → after logging in, go to [perma.cc/settings/tools](https://perma.cc/settings/tools). If you have never generated a key before, click the **"Generate an API key"** button — the key will appear on that page. Copy it.
+- [ ] **Zotero** installed on your computer → <a href="https://www.zotero.org/download/" target="_blank" rel="noopener noreferrer">Download free at zotero.org</a>
+- [ ] **A perma.cc account** → <a href="https://perma.cc/register" target="_blank" rel="noopener noreferrer">Register free at perma.cc</a> (takes 2 minutes)
+- [ ] **A perma.cc API key** → after logging in, go to <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a>. If you have never generated a key before, click the **"Generate an API key"** button — the key will appear on that page. Copy it.
+
+> [!IMPORTANT]
+> **New individual accounts start with only 10 free trial links.** After the trial, you need either an institutional account or a paid plan to keep archiving. Most law school libraries provide perma.cc access free of charge to students, faculty, and journal staff — check with your law librarian before signing up individually. You can check your remaining links at any time at <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a>.
 
 ---
 
@@ -81,7 +84,7 @@ You will need:
 
 ### Step 1 — Download and install the plugin file
 
-1. Click here to download: **[perma-archiver_v1.3.2.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.2/perma-archiver_v1.3.2.xpi)**
+1. Click here to download: **<a href="https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.2/perma-archiver_v1.3.2.xpi" target="_blank" rel="noopener noreferrer">perma-archiver_v1.3.2.xpi</a>**
    - Your browser may warn you about downloading a `.xpi` file — this is normal. Allow the download.
    - Save it somewhere easy to find (e.g., your Desktop).
 
@@ -115,7 +118,7 @@ You will need:
 > [!IMPORTANT]
 > The plugin will not archive anything until you complete this step. Your API key is what connects the plugin to your perma.cc account.
 >
-> **If a folder list does not appear after entering the key**, the key was not accepted. Double-check that you copied it correctly from [perma.cc/settings/tools](https://perma.cc/settings/tools). If you have not generated a key yet, click the **"Generate an API key"** button on that page first.
+> **If a folder list does not appear after entering the key**, the key was not accepted. Double-check that you copied it correctly from <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a>. If you have not generated a key yet, click the **"Generate an API key"** button on that page first.
 
 **Optional — Choose a save folder:**
 
@@ -133,11 +136,11 @@ By default, all archives are saved to your perma.cc **Personal Links** folder. A
 >
 > Step 3 is only needed if you use **Zotero's Word plugin** to insert citations into Microsoft Word or Google Docs. If you do, this small style file makes the `[https://perma.cc/...]` bracket appear in your footnotes automatically.
 >
-> Zotero's Word plugin is included with Zotero and installs automatically into Word. If you have not set it up yet, see [Zotero's word processor plugin documentation](https://www.zotero.org/support/word_processor_plugin_usage).
+> Zotero's Word plugin is included with Zotero and installs automatically into Word. If you have not set it up yet, see <a href="https://www.zotero.org/support/word_processor_plugin_usage" target="_blank" rel="noopener noreferrer">Zotero's word processor plugin documentation</a>.
 
 This step downloads a small style file that tells Zotero how to format your Bluebook footnotes — no technical knowledge needed.
 
-1. Click here to download: **[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
+1. Click here to download: **<a href="https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl" target="_blank" rel="noopener noreferrer">bluebook-law-review-perma.csl</a>**
    - If your browser opens it as text instead of downloading, right-click the link and choose **Save Link As…**
 
 2. In Zotero, open **Settings** (on Mac: **Zotero → Settings**; on Windows: **Edit → Preferences**).
@@ -187,6 +190,9 @@ Already have items in Zotero that were saved before you installed this plugin? Y
 Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed`** — a colored label that appears in your Zotero library so you can find and handle them manually. If you retry and it succeeds, the tag is removed automatically.
 
 **Works with any Zotero item that has a URL** — webpages, blog posts, newspaper articles, reports, government documents, and more.
+
+> [!IMPORTANT]
+> **Check your link quota before running a batch archive on a large library.** Individual trial accounts have only **10 links total** — if you run out mid-batch, remaining items will be tagged `perma-failed`. Institutional accounts (through law school libraries) typically have unlimited links. Check your remaining quota at <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a> before starting.
 
 ---
 
@@ -253,8 +259,8 @@ Other platforms and Zotero versions may work but have not been verified.
 
 GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
 
-> Modifications to the plugin source files must remain open source under AGPL-3.0. The included CSL style (`bluebook-law-review-perma.csl`) is separately licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) as required by the CSL project.
+> Modifications to the plugin source files must remain open source under AGPL-3.0. The included CSL style (`bluebook-law-review-perma.csl`) is separately licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> as required by the CSL project.
 
 ## Acknowledgments
 
-CSL style based on [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) by Bruce D'Arcus, Nancy Sims, and contributors. Locator handling (`at X`, `¶ X`, `n.X`) draws on Jonathan Choi's enhanced Bluebook style (2019). Further enhanced for Bluebook 22nd edition compliance and perma.cc archiving support.
+CSL style based on <a href="http://www.zotero.org/styles/bluebook-law-review" target="_blank" rel="noopener noreferrer">Bluebook Law Review</a> by Bruce D'Arcus, Nancy Sims, and contributors. Locator handling (`at X`, `¶ X`, `n.X`) draws on Jonathan Choi's enhanced Bluebook style (2019). Further enhanced for Bluebook 22nd edition compliance and perma.cc archiving support.
