@@ -200,11 +200,12 @@ if (!window._permaArchiver) {
         const resp = await fetch(this.PERMA_FOLDERS + "?limit=300", {
           headers: { "Authorization": "ApiKey " + apiKey }
         });
-        if (!resp.ok) return null;
+        if (resp.status === 401) return false;   // invalid key
+        if (!resp.ok) return null;               // other server/network error
         const data = await resp.json();
         return data.objects || [];
       } catch(e) {
-        return null;
+        return null;                             // network error
       }
     },
 
@@ -213,9 +214,21 @@ if (!window._permaArchiver) {
 
     async promptFolderSelect(window, apiKey) {
       const folders = await this.fetchFolders(apiKey);
-      if (!folders || folders.length === 0) {
+      if (folders === false) {
+        Services.prompt.alert(window, "Perma Archiver \u2014 Invalid API Key",
+          "Your API key was not accepted by perma.cc.\n\n" +
+          "Please check it via:\n  Tools \u2192 Perma Archiver \u2192 Set API Key\u2026\n\n" +
+          "To get or view your key:\n  https://perma.cc/settings/tools\n  (click \u201cGenerate an API key\u201d if you have not already)");
+        return;
+      }
+      if (!folders) {
         Services.prompt.alert(window, "Perma Archiver",
-          "Could not fetch folders. Links will be saved to Personal Links.");
+          "Could not connect to perma.cc. Please check your internet connection and try again.");
+        return;
+      }
+      if (folders.length === 0) {
+        Services.prompt.alert(window, "Perma Archiver",
+          "No folders found. Links will be saved to your Personal Links folder by default.");
         return;
       }
 
