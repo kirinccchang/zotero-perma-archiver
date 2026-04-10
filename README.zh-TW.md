@@ -10,15 +10,15 @@
 
 </div>
 
-**在 Zotero 中儲存任何有網址的項目時，自動封存到 [perma.cc](https://perma.cc)。文獻庫裡已有大量未封存的項目？全選後按右鍵，一次補齊。`[perma.cc/...]` 連結自動加入 Word 引用中。完全符合 Bluebook 22nd ed. Rule 18.2.1(d) 規範，不需要任何技術知識。**
+**在 Zotero 中儲存任何有網址的項目時，自動封存到 <a href="https://perma.cc" target="_blank" rel="noopener noreferrer">perma.cc</a>。文獻庫裡已有大量未封存的項目？全選後按右鍵，一次補齊。`[perma.cc/...]` 連結自動加入 Word 引用中。完全符合 Bluebook 22nd ed. Rule 18.2.1(d) 規範，不需要任何技術知識。**
 
-作者：[張正麒（Cheng-chi "Kirin" Chang）](https://kirinchang.com/)，美國紐約大學法學院「[亞美法研究所](https://usali.org/people#kirin-chang)」專任研究員，同時兼任美國埃默里大學法學院「人工智慧與未來工作計畫」附屬研究員，曾任該計畫副主任暨學術研究員。
+作者：<a href="https://kirinchang.com/" target="_blank" rel="noopener noreferrer">張正麒（Cheng-chi "Kirin" Chang）</a>，美國紐約大學法學院「<a href="https://usali.org/people#kirin-chang" target="_blank" rel="noopener noreferrer">亞美法研究所</a>」專任研究員，同時兼任美國埃默里大學法學院「人工智慧與未來工作計畫」附屬研究員，曾任該計畫副主任暨學術研究員。
 
 ---
 
 ## 這是什麼？為什麼需要它？
 
-**[Zotero](https://www.zotero.org/)** 是一款免費的文獻管理工具，點一下就能把網頁或文章存進你的研究資料庫。**[perma.cc](https://perma.cc)** 是哈佛法學院營運的免費封存服務，能為任何網頁建立永久備份，讓引用連結永遠不會失效。這個外掛讓兩者自動串聯。
+**<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a>** 是一款免費的文獻管理工具，點一下就能把網頁或文章存進你的研究資料庫。**<a href="https://perma.cc" target="_blank" rel="noopener noreferrer">perma.cc</a>** 是哈佛法學院營運的免費封存服務，能為任何網頁建立永久備份，讓引用連結永遠不會失效。這個外掛讓兩者自動串聯。
 
 **Bluebook 第 22 版（2025）將網路引用的封存列為強制規定。** 研究顯示《哈佛法律評論》超過 70% 的引用網址已失效。傳統做法每筆網址需手動操作五個步驟——前往 perma.cc、貼上網址、等待封存、複製連結、貼回 Zotero——一篇論文下來極為耗時。
 
@@ -37,11 +37,11 @@
 
 ### Zotero 是什麼？
 
-[Zotero](https://www.zotero.org/) 是一款免費、開放原始碼的文獻管理工具。在瀏覽器中閱讀文章、網頁或判決時，點一下 Zotero 瀏覽器擴充功能，就能自動將標題、作者、日期、網址等資訊儲存到你的文獻庫。之後 Zotero 可以自動產生各種引用格式的腳注與參考書目，廣受法律學者、學生和研究人員使用。
+<a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer">Zotero</a> 是一款免費、開放原始碼的文獻管理工具。在瀏覽器中閱讀文章、網頁或判決時，點一下 Zotero 瀏覽器擴充功能，就能自動將標題、作者、日期、網址等資訊儲存到你的文獻庫。之後 Zotero 可以自動產生各種引用格式的腳注與參考書目，廣受法律學者、學生和研究人員使用。
 
 ### perma.cc 是什麼？
 
-[perma.cc](https://perma.cc) 是哈佛法學院 Berkman Klein Center 專為法律引用設計的網頁封存服務。封存一個網址後，perma.cc 會為該頁面建立永久快照，並產生一個固定短網址（例如 `https://perma.cc/PT32-56LR`）——即使原始網頁之後被刪除、移轉或修改，這個連結永遠不變。
+<a href="https://perma.cc" target="_blank" rel="noopener noreferrer">perma.cc</a> 是哈佛法學院 Berkman Klein Center 專為法律引用設計的網頁封存服務。封存一個網址後，perma.cc 會為該頁面建立永久快照，並產生一個固定短網址（例如 `https://perma.cc/PT32-56LR`）——即使原始網頁之後被刪除、移轉或修改，這個連結永遠不變。
 
 perma.cc 由哈佛法學院及法學圖書館聯盟共同營運，是 Bluebook 中唯一具名推薦的封存工具。
 
@@ -79,9 +79,12 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 你需要準備：
 
-- [ ] 電腦上已安裝 **Zotero** → [在 zotero.org 免費下載](https://www.zotero.org/download/)
-- [ ] **perma.cc 帳號** → [在 perma.cc 免費註冊](https://perma.cc/register)（約 2 分鐘；你的法學院圖書館可能已有機構帳號）
-- [ ] **perma.cc 帳號金鑰（API Key）** → 登入後前往 [perma.cc/settings/tools](https://perma.cc/settings/tools)。若從未產生過金鑰，請先點選頁面上的 **「Generate an API key」** 按鈕，金鑰便會顯示在該頁面。複製後備用。
+- [ ] 電腦上已安裝 **Zotero** → <a href="https://www.zotero.org/download/" target="_blank" rel="noopener noreferrer">在 zotero.org 免費下載</a>
+- [ ] **perma.cc 帳號** → <a href="https://perma.cc/register" target="_blank" rel="noopener noreferrer">在 perma.cc 免費註冊</a>（約 2 分鐘）
+- [ ] **perma.cc 帳號金鑰（API Key）** → 登入後前往 <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a>。若從未產生過金鑰，請先點選頁面上的 **「Generate an API key」** 按鈕，金鑰便會顯示在該頁面。複製後備用。
+
+> [!IMPORTANT]
+> **個人免費帳號只有 10 個試用封存連結。** 用完後需要機構帳號或付費方案才能繼續封存。大多數法學院圖書館為學生、教師及期刊編輯提供免費的 perma.cc 使用權——建議先向圖書館員確認，再決定是否個人申請。你的剩餘額度可隨時在 <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a> 查看。
 
 ---
 
@@ -89,7 +92,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 ### 步驟一：下載並安裝外掛檔案
 
-1. 點此下載：**[perma-archiver_v1.3.2.xpi](https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.2/perma-archiver_v1.3.2.xpi)**
+1. 點此下載：**<a href="https://github.com/kirinccchang/zotero-perma-archiver/releases/download/v1.3.2/perma-archiver_v1.3.2.xpi" target="_blank" rel="noopener noreferrer">perma-archiver_v1.3.2.xpi</a>**
    - 瀏覽器可能會警告你正在下載 `.xpi` 檔案——這是正常的，允許下載即可。
    - 存到容易找到的地方（例如桌面）。
 
@@ -115,7 +118,6 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 ### 步驟二：輸入帳號金鑰
 
 1. 在 Zotero 中，點選選單列的 **Tools（工具）**。
-
 2. 將滑鼠移到 **Perma Archiver** 上。
 3. 點選 **Set API Key…**
 4. 在跳出的對話框中貼上你的金鑰，點 **OK**。
@@ -124,7 +126,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 > [!IMPORTANT]
 > 完成此步驟前，外掛不會封存任何內容。這組金鑰讓外掛知道要存入你的 perma.cc 帳號，不可略過。
 >
-> **如果輸入金鑰後沒有出現資料夾清單**，代表金鑰未被接受。請確認你從 [perma.cc/settings/tools](https://perma.cc/settings/tools) 複製的金鑰是否正確。若從未產生過金鑰，請先點頁面上的 **「Generate an API key」** 按鈕。
+> **如果輸入金鑰後沒有出現資料夾清單**，代表金鑰未被接受。請確認你從 <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a> 複製的金鑰是否正確。若從未產生過金鑰，請先點頁面上的 **「Generate an API key」** 按鈕。
 
 **選用——選擇儲存資料夾：**
 
@@ -142,11 +144,11 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 >
 > 步驟三僅適用於使用 **Zotero 的 Word 插件**在 Microsoft Word 或 Google Docs 中插入引用的使用者。安裝後，腳注中的 `[https://perma.cc/...]` 括號會自動出現。
 >
-> Zotero 的 Word 插件隨 Zotero 桌面版自動安裝至 Word。若尚未設定，請參考 [Zotero 文書處理器插件說明文件](https://www.zotero.org/support/word_processor_plugin_usage)。
+> Zotero 的 Word 插件隨 Zotero 桌面版自動安裝至 Word。若尚未設定，請參考 <a href="https://www.zotero.org/support/word_processor_plugin_usage" target="_blank" rel="noopener noreferrer">Zotero 文書處理器插件說明文件</a>。
 
 此步驟下載一個告訴 Zotero「如何排版 Bluebook 腳注」的小檔案，不需要任何技術知識。
 
-1. 點此下載：**[bluebook-law-review-perma.csl](https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl)**
+1. 點此下載：**<a href="https://raw.githubusercontent.com/kirinccchang/zotero-perma-archiver/main/bluebook-law-review-perma.csl" target="_blank" rel="noopener noreferrer">bluebook-law-review-perma.csl</a>**
    - 若瀏覽器將其顯示為純文字而非下載，請右鍵點擊連結，選擇**另存連結為（Save Link As…）**。
 
 2. 在 Zotero 中開啟**設定（Settings）**（Mac：**Zotero → Settings**；Windows：**Edit → Preferences**）。
@@ -196,6 +198,9 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 封存失敗的項目（例如付費牆頁面）會自動加上 **`perma-failed`** 標籤（一個出現在 Zotero 文獻庫中的彩色標記），方便你集中找出並手動處理。成功重試後，標籤自動移除。
 
 **支援所有有網址的 Zotero 條目**——網頁、部落格文章、報紙文章、報告、政府文件等，均適用。
+
+> [!IMPORTANT]
+> **批次歸檔大量條目前，請先確認你的 perma.cc 封存額度。** 個人試用帳號只有 **10 個連結**——若中途用完，剩餘條目會被標記為 `perma-failed`。法學院機構帳號通常為無限量。開始前請至 <a href="https://perma.cc/settings/tools" target="_blank" rel="noopener noreferrer">perma.cc/settings/tools</a> 確認剩餘額度。
 
 ---
 
@@ -262,8 +267,8 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 GNU Affero General Public License v3.0。詳見 [LICENSE](LICENSE)。
 
-> 對外掛原始碼的修改必須依 AGPL-3.0 保持開放原始碼。附帶的 CSL 樣式（`bluebook-law-review-perma.csl`）依 CSL 專案規定，另以 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 授權。
+> 對外掛原始碼的修改必須依 AGPL-3.0 保持開放原始碼。附帶的 CSL 樣式（`bluebook-law-review-perma.csl`）依 CSL 專案規定，另以 <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> 授權。
 
 ## 致謝
 
-CSL 樣式以 Bruce D'Arcus、Nancy Sims 及貢獻者的 [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) 為基礎。定位符處理（`at X`、`¶ X`、`n.X`）參考自 Jonathan Choi 的強化版 Bluebook 樣式（2019）。並進一步針對 Bluebook 22nd edition 合規需求及 perma.cc 封存支援進行強化。
+CSL 樣式以 <a href="http://www.zotero.org/styles/bluebook-law-review" target="_blank" rel="noopener noreferrer">Bluebook Law Review</a>（Bruce D'Arcus、Nancy Sims 及貢獻者）為基礎。定位符處理（`at X`、`¶ X`、`n.X`）參考自 Jonathan Choi 的強化版 Bluebook 樣式（2019）。並進一步針對 Bluebook 22nd edition 合規需求及 perma.cc 封存支援進行強化。
