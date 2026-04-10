@@ -253,4 +253,4 @@ GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
 
 ## Acknowledgments
 
-CSL style based on [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) by Bruce D'Arcus, Nancy Sims, and contributors, enhanced for Bluebook 22nd edition compliance with perma.cc archiving support.
+CSL style based on [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) by Bruce D'Arcus, Nancy Sims, and contributors. Locator handling (`at X`, `¶ X`, `n.X`) draws on Jonathan Choi's enhanced Bluebook style (2019). Further enhanced for Bluebook 22nd edition compliance and perma.cc archiving support.
