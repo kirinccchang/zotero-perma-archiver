@@ -81,7 +81,7 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 - [ ] 電腦上已安裝 **Zotero** → [在 zotero.org 免費下載](https://www.zotero.org/download/)
 - [ ] **perma.cc 帳號** → [在 perma.cc 免費註冊](https://perma.cc/register)（約 2 分鐘；你的法學院圖書館可能已有機構帳號）
-- [ ] **perma.cc 帳號金鑰（API Key）** → 登入後前往 [perma.cc/settings/tools](https://perma.cc/settings/tools)，複製頁面上顯示的那串英數字金鑰
+- [ ] **perma.cc 帳號金鑰（API Key）** → 登入後前往 [perma.cc/settings/tools](https://perma.cc/settings/tools)。若從未產生過金鑰，請先點選頁面上的 **「Generate an API key」** 按鈕，金鑰便會顯示在該頁面。複製後備用。
 
 ---
 
@@ -115,20 +115,20 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 ### 步驟二：輸入帳號金鑰
 
 1. 在 Zotero 中，點選選單列的 **Tools（工具）**。
+
 2. 將滑鼠移到 **Perma Archiver** 上。
 3. 點選 **Set API Key…**
 4. 在跳出的對話框中貼上你的金鑰，點 **OK**。
+5. 外掛會立即嘗試連線 perma.cc 並顯示你的資料夾清單——這代表金鑰正確且連線正常。
 
 > [!IMPORTANT]
 > 完成此步驟前，外掛不會封存任何內容。這組金鑰讓外掛知道要存入你的 perma.cc 帳號，不可略過。
+>
+> **如果輸入金鑰後沒有出現資料夾清單**，代表金鑰未被接受。請確認你從 [perma.cc/settings/tools](https://perma.cc/settings/tools) 複製的金鑰是否正確。若從未產生過金鑰，請先點頁面上的 **「Generate an API key」** 按鈕。
 
 **選用——選擇儲存資料夾：**
 
-預設情況下，所有封存會存入 perma.cc 的 **Personal Links** 資料夾。若想將封存分類到特定資料夾（例如按期刊或專案分類）：
-
-1. 在 Zotero 中，前往 **Tools → Perma Archiver → Choose Save Folder…**
-2. 畫面會列出你的 perma.cc 資料夾清單，選擇你想使用的資料夾。
-3. 點 **OK**——之後所有封存都會存入該資料夾。
+預設情況下，所有封存會存入 perma.cc 的 **Personal Links** 資料夾。輸入 API 金鑰後，資料夾選擇視窗會自動彈出。之後也可以隨時透過 **Tools → Perma Archiver → Choose Save Folder…** 重新選擇。
 
 > [!TIP]
 > 法學院帳號通常由圖書館預先建立了共用組織資料夾。如果你是期刊編輯或研究助理，可以詢問法學院圖書館員是否有機構專用的 perma.cc 資料夾。
@@ -247,6 +247,8 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 ## 測試環境
 
 - macOS Sequoia 15.7.1 · Zotero 8.0.5
+- Windows 11 Enterprise（26200.8037）· Zotero 8.0.4
+- Windows 11 Enterprise（26200.8037）· Zotero 7.0.32
 
 其他平台及 Zotero 版本或可正常運作，但尚未經過驗證。
 
