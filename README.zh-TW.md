@@ -262,4 +262,4 @@ GNU Affero General Public License v3.0。詳見 [LICENSE](LICENSE)。
 
 ## 致謝
 
-CSL 樣式以 Bruce D'Arcus、Nancy Sims 及貢獻者的 [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) 為基礎，針對 Bluebook 22nd edition 合規需求及 perma.cc 封存支援進行強化。
+CSL 樣式以 Bruce D'Arcus、Nancy Sims 及貢獻者的 [Bluebook Law Review](http://www.zotero.org/styles/bluebook-law-review) 為基礎。定位符處理（`at X`、`¶ X`、`n.X`）參考自 Jonathan Choi 的強化版 Bluebook 樣式（2019）。並進一步針對 Bluebook 22nd edition 合規需求及 perma.cc 封存支援進行強化。
