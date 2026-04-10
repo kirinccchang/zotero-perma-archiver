@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 /**
- * Perma Archiver — bootstrap.js v1.2.2
+ * Perma Archiver — bootstrap.js v1.2.9
  * Menu: Set API Key, Choose Folder, separator, Enable/Disable, separator, About
  */
 "use strict";
@@ -174,16 +174,24 @@ function _promptFirstRun(window) {
 function _promptSetKey(window) {
   const result = { value: _getKey() };
   const ok = Services.prompt.prompt(window,
-    "Perma Archiver — API Key",
-    "Enter your perma.cc API key.\n(https://perma.cc/settings/tools)",
+    "Perma Archiver \u2014 API Key",
+    "Enter your perma.cc API key.\n\n" +
+    "Get your key at: https://perma.cc/settings/tools\n" +
+    "(If you have not generated one yet, click \u201cGenerate an API key\u201d on that page.)",
     result, null, { value: false }
   );
   if (ok && result.value && result.value.trim()) {
-    _setKey(result.value.trim());
+    const key = result.value.trim();
+    _setKey(key);
     _setOn(true);
-    Services.prompt.alert(window, "Perma Archiver",
-      "✓ API key saved!\n\nNext: Tools → Perma Archiver → Choose Save Folder…\n" +
-      "to pick which perma.cc folder to use.");
+    // Immediately validate by trying to load folders
+    if (window._permaArchiver) {
+      window._permaArchiver.promptFolderSelect(window, key);
+    } else {
+      Services.prompt.alert(window, "Perma Archiver",
+        "\u2713 API key saved!\n\nNext: Tools \u2192 Perma Archiver \u2192 Choose Save Folder\u2026\n" +
+        "to verify your key and pick which folder to use.");
+    }
   }
 }
 
