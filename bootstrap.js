@@ -3,7 +3,7 @@
  * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
 
 /**
- * Perma Archiver — bootstrap.js v1.3.1
+ * Perma Archiver — bootstrap.js v1.3.2
  * Menu: Set API Key, Choose Folder, separator, Enable/Disable, separator, About
  */
 "use strict";
@@ -101,12 +101,17 @@ function _injectMenu(window) {
     popup.addEventListener("popupshowing", () => {
       const folderItem = doc.getElementById(MENU_ID + "-folder");
       if (!folderItem) return;
-      const name = window._permaArchiver
-        ? window._permaArchiver.getCurrentFolderName()
-        : null;
-      const label = name
-        ? "Save Folder: \u201c" + name + "\u201d \u2014 Change\u2026"
-        : "Save Folder: Personal Links (default) \u2014 Change\u2026";
+      let label;
+      if (!_getKey()) {
+        label = "Save Folder: (set API key first)";
+      } else {
+        const name = window._permaArchiver
+          ? window._permaArchiver.getCurrentFolderName()
+          : null;
+        label = name
+          ? "Save Folder: \u201c" + name + "\u201d \u2014 Change\u2026"
+          : "Save Folder: Personal Links (default) \u2014 Change\u2026";
+      }
       folderItem.setAttribute("label", label);
     });
 
