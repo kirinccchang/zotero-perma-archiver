@@ -199,7 +199,9 @@ Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed
 ## Known limitations
 
 > [!WARNING]
-> **A perma.cc link is not a guarantee the content was captured.** If the original page was already unavailable, returning an error, or behind a paywall at the moment of capture, perma.cc may still issue a link — but the archived snapshot will be empty or show an error page. Always verify your perma.cc links before submitting. You can check by clicking the link: if it shows a blank page or an error, re-archive manually at perma.cc when the page is accessible.
+> **A perma.cc link is not a guarantee the content was captured.** If the original page was already unavailable, returning an error, or behind a paywall at the moment of capture, perma.cc may still issue a link — but the archived snapshot will be empty or show a "Capture Failed" error. Always verify your perma.cc links before submitting by clicking each one and confirming the content appears correctly.
+>
+> **If a capture failed**, you can fix it manually without losing the link: open the perma.cc link, click **"Show record details"**, then use **"Upload file"** to replace the failed capture with a screenshot (JPG, PNG, GIF) or a PDF of the page — up to 200 MB. This lets you preserve the same perma.cc URL while supplying a working snapshot.
 
 > [!WARNING]
 > **Paywalled sites** (NYT, WSJ, SSRN login-required pages, etc.) may fail to archive — perma.cc cannot bypass paywalls. For these, archive manually at perma.cc and add `(on file with the author)` to your citation per Rule 18.2.1(d).
