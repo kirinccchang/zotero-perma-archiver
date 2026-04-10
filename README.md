@@ -211,7 +211,9 @@ Items that fail (e.g., paywalled pages) are automatically tagged **`perma-failed
 Try clearing the Zotero extension cache:
 
 1. Fully quit Zotero (make sure it's not just minimized)
-2. On your Mac, open Finder and press **⌘ Shift G**, then paste: `~/Library/Application Support/Zotero/Profiles/`
+2. Navigate to your Zotero profile folder:
+   - **Mac:** Open Finder, press **⌘ Shift G**, and paste: `~/Library/Application Support/Zotero/Profiles/`
+   - **Windows:** Open File Explorer, click the address bar at the top, and paste: `%APPDATA%\Zotero\Zotero\Profiles\`
 3. Open the folder with a long name ending in `.default`
 4. Delete the file `extensions.json` and the folder named `extensions`
 5. Restart Zotero and reinstall the plugin from Step 1
