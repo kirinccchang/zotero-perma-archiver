@@ -172,7 +172,9 @@ Perma Archiver 將整個流程自動化。只要用 Zotero 儲存有網址的項
 
 1. 你點一下 Zotero 瀏覽器擴充功能圖示，儲存任何有網址的條目
 2. 外掛在背景自動完成封存（需要幾秒鐘）
-3. perma.cc 連結直接寫入你的 Zotero 條目，可在條目詳細資訊中查看
+3. perma.cc 連結直接寫入你的 Zotero 條目。查看方式：在 Zotero 中點選該條目，看右側的 **Info（資訊）** 分頁。
+   - 大多數條目類型（新聞、網頁、政府文件等）會存在 **Place（地點）** 欄位。
+   - 部落格文章、論壇貼文等沒有 Place 欄位的類型，會附加在 **URL** 欄位末尾，格式為：`https://原始網址 [https://perma.cc/XXXX-XXXX]`。
 
 若你使用 Zotero 的 Word 插件（步驟三），引用腳注會自動加上 perma.cc 括號：
 
