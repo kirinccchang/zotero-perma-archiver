@@ -220,7 +220,9 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 請嘗試清除 Zotero 擴充套件快取：
 
 1. 完全關閉 Zotero（確認不是只有最小化）
-2. 在 Mac 上開啟 Finder，按 **⌘ Shift G**，貼上：`~/Library/Application Support/Zotero/Profiles/`
+2. 前往你的 Zotero 個人資料夾：
+   - **Mac：** 開啟 Finder，按 **⌘ Shift G**，貼上：`~/Library/Application Support/Zotero/Profiles/`
+   - **Windows：** 開啟檔案總管，點選上方網址列，貼上：`%APPDATA%\Zotero\Zotero\Profiles\`
 3. 開啟名稱很長、結尾為 `.default` 的資料夾
 4. 刪除 `extensions.json` 檔案及 `extensions` 資料夾
 5. 重新啟動 Zotero 並從步驟一重新安裝外掛
