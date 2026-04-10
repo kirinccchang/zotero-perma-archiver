@@ -73,7 +73,7 @@ You will need:
 
 - [ ] **Zotero** installed on your computer → [Download free at zotero.org](https://www.zotero.org/download/)
 - [ ] **A perma.cc account** → [Register free at perma.cc](https://perma.cc/register) (takes 2 minutes; your law library may already have an institutional account)
-- [ ] **A perma.cc API key** → after logging in, go to [perma.cc/settings/tools](https://perma.cc/settings/tools) and copy the key shown there
+- [ ] **A perma.cc API key** → after logging in, go to [perma.cc/settings/tools](https://perma.cc/settings/tools). If you have never generated a key before, click the **"Generate an API key"** button — the key will appear on that page. Copy it.
 
 ---
 
@@ -110,17 +110,16 @@ You will need:
 2. Hover over **Perma Archiver**.
 3. Click **Set API Key…**
 4. A small dialog box will appear. Paste your API key and click **OK**.
+5. The plugin will immediately try to connect to perma.cc and show your folders — this confirms your key is working.
 
 > [!IMPORTANT]
 > The plugin will not archive anything until you complete this step. Your API key is what connects the plugin to your perma.cc account.
+>
+> **If a folder list does not appear after entering the key**, the key was not accepted. Double-check that you copied it correctly from [perma.cc/settings/tools](https://perma.cc/settings/tools). If you have not generated a key yet, click the **"Generate an API key"** button on that page first.
 
 **Optional — Choose a save folder:**
 
-By default, all archives are saved to your perma.cc **Personal Links** folder. If you want them organized into a specific folder (e.g., a folder for a particular journal or project):
-
-1. In Zotero, go to **Tools → Perma Archiver → Choose Save Folder…**
-2. A list of your perma.cc folders will appear. Select the one you want.
-3. Click **OK** — all future archives will be saved there.
+By default, all archives are saved to your perma.cc **Personal Links** folder. After entering your API key, a folder selection dialog will open automatically. You can also access it later via **Tools → Perma Archiver → Choose Save Folder…**
 
 > [!TIP]
 > Law school accounts often have shared organizational folders set up by the library. Ask your law librarian if your institution has a dedicated perma.cc folder for student journal work.
@@ -239,6 +238,8 @@ Check that:
 ## Tested on
 
 - macOS Sequoia 15.7.1 · Zotero 8.0.5
+- Windows 11 Enterprise (26200.8037) · Zotero 8.0.4
+- Windows 11 Enterprise (26200.8037) · Zotero 7.0.32
 
 Other platforms and Zotero versions may work but have not been verified.
 
