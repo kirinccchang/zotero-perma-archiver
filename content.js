@@ -244,12 +244,16 @@ if (!window._permaArchiver) {
         const idx = ids.indexOf(currentID);
         if (idx >= 0) selected.value = idx;
       }
+      const hasChosen  = !!currentID;
       const currentName = names[selected.value] || "Personal Links";
+      const dialogMsg  = hasChosen
+        ? "Currently saving to: \u201c" + currentName + "\u201d\n\nSelect a folder to change:"
+        : "Default folder: \u201cPersonal Links\u201d (no folder selected yet)\n\nSelect a folder:";
 
       const ok = Services.prompt.select(
         window,
         "Perma Archiver \u2014 Choose Folder",
-        "Currently saving to: \u201c" + currentName + "\u201d\n\nSelect a folder to change:",
+        dialogMsg,
         names,
         selected
       );
@@ -300,8 +304,9 @@ if (!window._permaArchiver) {
       try { Services.prefs.setStringPref(this.PREF_FOLDER_NAME, name); }
       catch(e) {}
     },
+    // Returns the chosen folder name, or null if never explicitly selected.
     getCurrentFolderName() {
-      return this._getFolderName() || "Personal Links";
+      return this._getFolderName() || null;
     },
   };
 }
