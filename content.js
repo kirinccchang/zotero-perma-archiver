@@ -13,9 +13,10 @@ if (!window._permaArchiver) {
 
     _notifierID: null,
 
-    PREF_APIKEY  : "extensions.perma-archiver.apiKey",
-    PREF_ON      : "extensions.perma-archiver.enabled",
-    PREF_FOLDER  : "extensions.perma-archiver.folderID",
+    PREF_APIKEY      : "extensions.perma-archiver.apiKey",
+    PREF_ON          : "extensions.perma-archiver.enabled",
+    PREF_FOLDER      : "extensions.perma-archiver.folderID",
+    PREF_FOLDER_NAME : "extensions.perma-archiver.folderName",
     PERMA_API    : "https://api.perma.cc/v1/archives/",
     PERMA_FOLDERS: "https://api.perma.cc/v1/folders/",
     MENU_ID      : "perma-archiver-menu",
@@ -243,11 +244,12 @@ if (!window._permaArchiver) {
         const idx = ids.indexOf(currentID);
         if (idx >= 0) selected.value = idx;
       }
+      const currentName = names[selected.value] || "Personal Links";
 
       const ok = Services.prompt.select(
         window,
-        "Perma Archiver — Choose Folder",
-        "Choose which perma.cc folder to save archives to:",
+        "Perma Archiver \u2014 Choose Folder",
+        "Currently saving to: \u201c" + currentName + "\u201d\n\nSelect a folder to change:",
         names,
         selected
       );
@@ -256,8 +258,9 @@ if (!window._permaArchiver) {
         const chosenID   = ids[selected.value];
         const chosenName = names[selected.value];
         this._setFolderID(chosenID);
+        this._setFolderName(chosenName);
         Services.prompt.alert(window, "Perma Archiver",
-          "✓ Archives will be saved to: " + chosenName);
+          "\u2713 Archives will now be saved to: \u201c" + chosenName + "\u201d");
       }
     },
 
@@ -288,6 +291,17 @@ if (!window._permaArchiver) {
     _setFolderID(id) {
       try { Services.prefs.setIntPref(this.PREF_FOLDER, id); }
       catch(e) {}
+    },
+    _getFolderName() {
+      try { return Services.prefs.getStringPref(this.PREF_FOLDER_NAME, ""); }
+      catch(e) { return ""; }
+    },
+    _setFolderName(name) {
+      try { Services.prefs.setStringPref(this.PREF_FOLDER_NAME, name); }
+      catch(e) {}
+    },
+    getCurrentFolderName() {
+      return this._getFolderName() || "Personal Links";
     },
   };
 }
