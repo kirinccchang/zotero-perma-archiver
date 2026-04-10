@@ -207,7 +207,9 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 ## 已知限制
 
 > [!WARNING]
-> **取得 perma.cc 連結，不代表內容已成功封存。** 若原始頁面在封存當下已失效、回傳錯誤，或位於付費牆後方，perma.cc 仍可能產生連結——但快照內容將是空白頁或錯誤頁面。**請在提交論文前逐一確認 perma.cc 連結是否正常顯示內容。** 若點開後是空白或錯誤，請在頁面可存取時前往 perma.cc 手動重新封存。
+> **取得 perma.cc 連結，不代表內容已成功封存。** 若原始頁面在封存當下已失效、回傳錯誤，或位於付費牆後方，perma.cc 仍可能產生連結——但快照會顯示空白頁或「Capture Failed」錯誤。**請在提交論文前逐一點開 perma.cc 連結，確認內容正常顯示。**
+>
+> **若封存失敗**，你可以在不換連結的情況下手動補救：開啟該 perma.cc 連結，點選 **「Show record details」**，再使用 **「Upload file」** 將頁面截圖（JPG、PNG、GIF）或 PDF 上傳取代失敗的快照，最大支援 200 MB。這樣就能保留原本的 perma.cc 網址，同時補上正確的快照內容。
 
 > [!WARNING]
 > **付費牆網站**（NYT、WSJ、需登入的 SSRN 頁面等）可能無法封存——perma.cc 無法繞過付費牆。請至 perma.cc 手動封存，並依 Rule 18.2.1(d) 在引用末尾改用 `(on file with the author)` 格式。
