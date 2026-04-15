@@ -286,3 +286,7 @@ GNU Affero General Public License v3.0。詳見 [LICENSE](LICENSE)。
 ## 致謝
 
 CSL 樣式以 <a href="http://www.zotero.org/styles/bluebook-law-review" target="_blank" rel="noopener noreferrer">Bluebook Law Review</a>（Bruce D'Arcus、Nancy Sims 及貢獻者）為基礎。定位符處理（`at X`、`¶ X`、`n.X`）參考自 Jonathan Choi 的強化版 Bluebook 樣式（2019）。並進一步針對 Bluebook 22nd edition 合規需求及 perma.cc 封存支援進行強化。
+
+---
+
+*本工具與《藍皮書》或 Zotero 無任何附屬或背書關係。Not affiliated with or endorsed by The Bluebook or Zotero.*
