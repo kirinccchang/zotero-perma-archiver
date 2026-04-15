@@ -257,6 +257,18 @@ Other platforms and Zotero versions may work but have not been verified.
 
 ---
 
+## Part of lawreview.tools
+
+The Zotero Perma Archiver is one tool in the **[lawreview.tools](https://lawreview.tools)** suite — a free, open-source collection of Bluebook tools for law review editors and legal scholars:
+
+| Tool | What it does | When to use it |
+|------|-------------|----------------|
+| **[Zotero Perma Archiver](https://lawreview.tools/zotero)** | Auto-archives URLs to perma.cc as you save items in Zotero | While writing |
+| **[PermaDrop](https://lawreview.tools/permadrop/)** | Batch-archives all URLs in a .docx to perma.cc | Before submission |
+| **[SupraDrop](https://lawreview.tools/supradrop/)** | Audits citation logic across all footnotes | Before submission |
+
+Typical workflow: Zotero Perma Archiver while researching → PermaDrop to archive remaining URLs → SupraDrop to catch citation errors → submit.
+
 ## License
 
 GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
