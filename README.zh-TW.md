@@ -265,6 +265,18 @@ https://www.theatlantic.com/ideas/archive/2024/08/interview-justice-neil-gorsuch
 
 ---
 
+## lawreview.tools 工具套件
+
+Zotero Perma Archiver 是 **[lawreview.tools](https://lawreview.tools)** 免費開源工具套件的一部分，專為法律評論編輯與法學學者設計：
+
+| 工具 | 功能 | 使用時機 |
+|------|------|----------|
+| **[Zotero Perma Archiver](https://lawreview.tools/zotero)** | 在 Zotero 中儲存文獻時自動封存網址至 perma.cc | 寫作研究階段 |
+| **[PermaDrop](https://lawreview.tools/permadrop/)** | 批次封存 `.docx` 中所有網址至 perma.cc | 投稿前 |
+| **[SupraDrop](https://lawreview.tools/supradrop/)** | 審查所有腳注的引用格式邏輯 | 投稿前 |
+
+建議工作流程：使用 Zotero Perma Archiver 建立研究資料庫 → 用 PermaDrop 封存剩餘網址 → 用 SupraDrop 找出引用錯誤 → 投稿。
+
 ## 授權
 
 GNU Affero General Public License v3.0。詳見 [LICENSE](LICENSE)。
