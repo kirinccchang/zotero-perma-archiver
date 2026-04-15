@@ -289,4 +289,4 @@ CSL 樣式以 <a href="http://www.zotero.org/styles/bluebook-law-review" target=
 
 ---
 
-*本工具與《藍皮書》或 Zotero 無任何附屬或背書關係。Not affiliated with or endorsed by The Bluebook or Zotero.*
+*本工具與《藍皮書》或 Zotero 無任何附屬或背書關係。*
