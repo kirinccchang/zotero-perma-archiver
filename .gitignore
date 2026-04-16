@@ -1,0 +1,6 @@
+# Build artifacts
+*.xpi
+
+# Python
+__pycache__/
+*.pyc
