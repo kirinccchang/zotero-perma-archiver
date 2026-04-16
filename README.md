@@ -281,4 +281,4 @@ CSL style based on <a href="http://www.zotero.org/styles/bluebook-law-review" ta
 
 ---
 
-*Not affiliated with or endorsed by The Bluebook or Zotero.*
+*Not affiliated with or endorsed by The Bluebook, Zotero, or perma.cc.*
